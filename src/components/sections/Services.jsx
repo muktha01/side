@@ -40,13 +40,13 @@ const services = [
       'We harness the power of AI to transform raw information into intelligent insights that drive decision-making. Through advanced systems built by experienced AI software developers, organizations gain the clarity and precision needed for long-term growth.',
     image: '/images/home/ai.svg',
   },
-  {
-    id: '06',
-    title: 'Data Analysis & Data science',
-    description:
-      'We excel at uncovering data narratives through visualizations, forecasting, and insights that support strategic choices. These techniques are often embedded in custom application development services where real-time data plays a pivotal role in decision-making.',
-    image: '/images/home/data.svg',
-  },
+  // {
+  //   id: '06',
+  //   title: 'Data Analysis & Data science',
+  //   description:
+  //     'We excel at uncovering data narratives through visualizations, forecasting, and insights that support strategic choices. These techniques are often embedded in custom application development services where real-time data plays a pivotal role in decision-making.',
+  //   image: '/images/home/data.svg',
+  // },
   {
     id: '07',
     title: 'Managed Cloud & DevOps',

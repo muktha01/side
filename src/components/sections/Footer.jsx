@@ -197,7 +197,9 @@ export default function Footer() {
 
         {/* Book a Meeting Button (Fixed) */}
         <motion.a
-          href="#contact"
+          href="https://wa.me/919381820806?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="fixed bottom-8 right-8 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 z-40 hidden lg:block"

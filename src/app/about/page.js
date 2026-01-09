@@ -141,10 +141,10 @@ export default function AboutPage() {
   };
 
   const stats = [
-    { number: 10, suffix: '+', label: 'Years Experience', icon: ClockIcon },
-    { number: 500, suffix: '+', label: 'Projects Delivered', icon: CheckBadgeIcon },
-    { number: 200, suffix: '+', label: 'Happy Clients', icon: HeartIcon },
-    { number: 50, suffix: '+', label: 'Team Members', icon: UserGroupIcon },
+    { number: 5, suffix: '+', label: 'Years Experience', icon: ClockIcon },
+    { number: 200, suffix: '+', label: 'Projects Delivered', icon: CheckBadgeIcon },
+    { number: 150, suffix: '+', label: 'Happy Clients', icon: HeartIcon },
+    { number: 25, suffix: '+', label: 'Team Members', icon: UserGroupIcon },
   ];
 
   const values = [
@@ -225,14 +225,12 @@ export default function AboutPage() {
   ];
 
   const milestones = [
-    { year: 2015, title: 'Company Founded', description: 'Started with a vision to transform digital experiences', icon: RocketLaunchIcon },
-    { year: 2016, title: 'First 10 Clients', description: 'Established strong foundation with early adopters', icon: UserGroupIcon },
-    { year: 2017, title: 'Team Expansion', description: 'Grew to 20 talented professionals', icon: ChartBarIcon },
-    { year: 2018, title: 'AI Division Launch', description: 'Expanded services to include AI and ML solutions', icon: SparklesIcon },
-    { year: 2019, title: '100+ Projects', description: 'Milestone achievement in project delivery', icon: CheckBadgeIcon },
-    { year: 2020, title: 'Global Reach', description: 'Expanded operations internationally', icon: GlobeAltIcon },
-    { year: 2022, title: 'Innovation Hub', description: 'Opened R&D center for emerging technologies', icon: LightBulbIcon },
-    { year: 2024, title: '500+ Projects', description: 'Reached new heights in client satisfaction', icon: TrophyIcon },
+    { year: 2020, title: 'Company Founded', description: 'Started with a vision to transform digital experiences', icon: RocketLaunchIcon },
+    { year: 2021, title: 'First 20 Clients', description: 'Established strong foundation with early adopters', icon: UserGroupIcon },
+    { year: 2022, title: 'Team Expansion', description: 'Grew to 15 talented professionals', icon: ChartBarIcon },
+    { year: 2023, title: 'Product Launch', description: 'Launched HRM and CRM products for businesses', icon: SparklesIcon },
+    { year: 2024, title: '150+ Projects', description: 'Milestone achievement in project delivery', icon: CheckBadgeIcon },
+    { year: 2025, title: 'Innovation Focus', description: 'Expanded AI and automation services', icon: LightBulbIcon },
   ];
 
   const benefits = [
@@ -244,7 +242,7 @@ export default function AboutPage() {
     {
       icon: TrophyIcon,
       title: 'Proven Track Record',
-      description: '500+ successful projects delivered on time and budget',
+      description: '200+ successful projects delivered on time and budget',
     },
     {
       icon: BoltIcon,
@@ -339,7 +337,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
           >
-            Building Digital Excellence Since 2015
+            Building Digital Excellence Since 2020
           </motion.h1>
           
           <motion.p
@@ -431,10 +429,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-300 text-lg">
                 <p>
-                  Founded in 2015, we started with a simple yet powerful vision: to bridge the gap between innovative technology and business success. What began as a small team of passionate developers has grown into a global force in digital transformation.
+                  Founded in 2020, we started with a simple yet powerful vision: to bridge the gap between innovative technology and business success. What began as a small team of passionate developers has grown into a rapidly expanding digital solutions provider.
                 </p>
                 <p>
-                  Over the past decade, we've evolved from a local startup to an international software development powerhouse. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.
+                  Over the past 5 years, we've evolved from a local startup to a trusted software development partner. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.
                 </p>
                 <p>
                   Today, we're proud to serve clients across continents, delivering cutting-edge solutions in AI, cloud computing, mobile development, and enterprise software. Our success is measured not just in projects delivered, but in the lasting partnerships we've built and the real-world impact we've created.

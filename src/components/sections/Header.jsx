@@ -27,12 +27,14 @@ export default function Header() {
         { name: 'Mobile App Development', href: '/services/mobile-app' },
         { name: 'Web App Development', href: '/services/web-app' },
         { name: 'Artificial Intelligence (AI)', href: '/services/ai' },
-        { name: 'Data Analytics & Data Science', href: '/services/data-analytics' },
-        { name: 'Cloud & DevOps', href: '/services/cloud-devops' },
+        { name: 'Digital Marketing', href: '/services/digital-marketing' },
+        { name: 'Training Institute', href: '/services/training-institute' },
+        { name: 'Loans', href: '/services/loans' },
       ]
     },
-    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Products', href: '/products' },
     { name: 'About Us', href: '/about' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ];
 
