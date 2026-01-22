@@ -25,18 +25,6 @@ export default function Hero() {
         {/* Floating geometric shapes */}
         <motion.div
           animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-20 right-20 w-20 h-20 border border-primary/30 rounded-lg"
-        />
-        <motion.div
-          animate={{
             y: [0, 20, 0],
             rotate: [0, -5, 0],
           }}

@@ -19,12 +19,21 @@ export default function Footer() {
   ];
 
   const services = [
+    { name: 'Software & App Development', href: '/services/software-app-development' },
+    { name: 'Website Solutions', href: '/services/website-solutions' },
     { name: 'UI/UX Design', href: '/services/uiux-design' },
     { name: 'Mobile App Development', href: '/services/mobile-app' },
     { name: 'Web App Development', href: '/services/web-app' },
+    { name: 'Design & Creative Services', href: '/services/design-creative' },
+    { name: 'Business Automation Systems', href: '/services/business-automation' },
+    { name: 'Communication & Marketing Tools', href: '/services/communication-marketing' },
     { name: 'Artificial Intelligence (AI)', href: '/services/ai' },
     { name: 'Data Analytics & Data Science', href: '/services/data-analytics' },
     { name: 'Cloud & DevOps', href: '/services/cloud-devops' },
+    { name: 'Digital Marketing', href: '/services/digital-marketing' },
+    { name: 'Training Institute', href: '/services/training-institute' },
+    { name: 'Job Support & Career Services', href: '/services/job-support-career' },
+    { name: 'Civil & Design Courses', href: '/services/civil-design-courses' },
   ];
 
   const compliance = [

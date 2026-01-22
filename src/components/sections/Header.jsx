@@ -23,12 +23,19 @@ export default function Header() {
       href: '#services', 
       hasDropdown: true,
       dropdownItems: [
+        { name: 'Software & App Development', href: '/services/software-app-development' },
+        { name: 'Website Solutions', href: '/services/website-solutions' },
         { name: 'UI/UX Design', href: '/services/uiux-design' },
         { name: 'Mobile App Development', href: '/services/mobile-app' },
         { name: 'Web App Development', href: '/services/web-app' },
+        { name: 'Design & Creative Services', href: '/services/design-creative' },
+        { name: 'Business Automation Systems', href: '/services/business-automation' },
+        { name: 'Communication & Marketing Tools', href: '/services/communication-marketing' },
         { name: 'Artificial Intelligence (AI)', href: '/services/ai' },
         { name: 'Digital Marketing', href: '/services/digital-marketing' },
         { name: 'Training Institute', href: '/services/training-institute' },
+        { name: 'Job Support & Career Services', href: '/services/job-support-career' },
+        { name: 'Civil & Design Courses', href: '/services/civil-design-courses' },
         { name: 'Loans', href: '/services/loans' },
       ]
     },
@@ -96,8 +103,8 @@ export default function Header() {
                 {/* Dropdown Menu */}
                 {item.hasDropdown && item.dropdownItems && (
                   <div className="absolute left-0 top-full pt-3 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                    <div className="bg-gradient-to-br from-black/98 to-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden w-[280px]">
-                      <div className="flex flex-col gap-1 py-4 px-3">
+                    <div className="bg-gradient-to-br from-black/98 to-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden w-[600px]">
+                      <div className="grid grid-cols-2 gap-1 py-4 px-3">
                         {item.dropdownItems.map((dropdownItem, index) => (
                           <Link
                             key={dropdownItem.name}
@@ -110,7 +117,7 @@ export default function Header() {
                             {/* Left accent bar */}
                             <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-gradient-to-b from-[#0EA5E9] to-[#06B6D4] opacity-0 group-hover/item:opacity-100 group-hover/item:h-3/4 transition-all duration-300 rounded-r-full"></div>
                             
-                            <span className="relative text-base font-medium block group-hover/item:translate-x-1 transition-transform duration-300">{dropdownItem.name}</span>
+                            <span className="relative text-sm font-medium block group-hover/item:translate-x-1 transition-transform duration-300">{dropdownItem.name}</span>
                           </Link>
                         ))}
                       </div>

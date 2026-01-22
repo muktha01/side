@@ -623,7 +623,7 @@ export default function TrainingInstitutePage() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white/10 border-2 border-white/20 text-white rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                Call: +91 9381820806
+                Call: +91 93818 20806
               </motion.a>
             </div>
           </motion.div>

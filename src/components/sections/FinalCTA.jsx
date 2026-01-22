@@ -54,7 +54,7 @@ export default function FinalCTA() {
               <h3 className="text-white font-semibold mb-2">WhatsApp Us</h3>
               <p className="text-gray-400 text-sm mb-3">Quick response guaranteed</p>
               <a href="https://wa.me/919381820806" target="_blank" rel="noopener noreferrer" className="text-cyan-400 text-sm font-semibold hover:text-cyan-300">
-                +91 9381820806
+                +91 93818 20806
               </a>
             </motion.div>
 
@@ -69,7 +69,7 @@ export default function FinalCTA() {
               <h3 className="text-white font-semibold mb-2">Call Us</h3>
               <p className="text-gray-400 text-sm mb-3">Available 24/7</p>
               <a href="tel:+919381820806" className="text-blue-400 text-sm font-semibold hover:text-blue-300">
-                +91 9381820806
+                +91 93818 20806
               </a>
             </motion.div>
 

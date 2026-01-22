@@ -696,7 +696,7 @@ export default function AboutPage() {
       </section>
 
       {/* Global Presence */}
-      <section className="py-24 px-4 relative overflow-hidden">
+      {/* <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-black">
           <img
             src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200"
@@ -753,7 +753,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Work With Us */}
       <section className="py-24 px-4 relative">

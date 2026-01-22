@@ -792,8 +792,8 @@ export default function ArtificialIntelligencePage() {
                 <a href="mailto:ai@sdevsolutions.com" className="hover:text-purple-500 transition-colors">
                   📧 ai@sdevsolutions.com
                 </a>
-                <a href="tel:+1234567890" className="hover:text-purple-500 transition-colors">
-                  📞 +1 (234) 567-890
+                <a href="tel:+919381820806" className="hover:text-purple-500 transition-colors">
+                  📞 +91 93818 20806
                 </a>
               </div>
             </div>

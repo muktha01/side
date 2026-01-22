@@ -7,59 +7,87 @@ import Image from 'next/image';
 const services = [
   {
     id: '01',
-    title: 'UI-UX Design',
+    title: 'Software & App Development',
     description:
-      'As an agency our UI/UX teams focus on creating, visually appealing and user-friendly interfaces that significantly enhance engagement and user satisfaction. These intuitive experiences play a key role in custom software development services aimed at improving product usability.',
-    image: '/images/home/uiux.svg',
-  },
-  {
-    id: '02',
-    title: 'Mobile Apps',
-    description:
-      'We specialize in the development of innovative and user-friendly mobile applications for both iOS and Android platforms. Our process encompasses every stage, from initial concept and design to final deployment.',
+      'Comprehensive software solutions including mobile app development for Android, iOS, and hybrid platforms. From app designing and UI/UX to custom software development, we deliver end-to-end solutions tailored to your business needs.',
     image: '/images/home/mobile.svg',
   },
   {
-    id: '03',
-    title: 'Backend Development',
+    id: '02',
+    title: 'Website Solutions',
     description:
-      'As an organization, we specialize in delivering responsive, secure, and user-friendly web solutions designed to enhance your online presence. With the expertise of a software development agency, we ensure your backend systems are scalable and future-ready.',
-    image: '/images/home/backend.svg',
-  },
-  {
-    id: '04',
-    title: 'Web App Development',
-    description:
-      'We specialize in developing responsive web applications that deliver seamless user experiences across all devices and platforms.',
+      'Professional web design and development services including static and dynamic websites, corporate and business sites, and full-featured e-commerce platforms. We create responsive, SEO-friendly websites that drive results.',
     image: '/images/home/frontend.svg',
   },
   {
+    id: '03',
+    title: 'Design & Creative Services',
+    description:
+      'Expert graphic design services including logo and branding design, social media creatives, and marketing and advertisement designs. We bring your brand vision to life with stunning visual content.',
+    image: '/images/home/uiux.svg',
+  },
+  {
+    id: '04',
+    title: 'Business Automation Systems',
+    description:
+      'Streamline your operations with CRM, HRM, and ERP solutions. Our workflow and lead automation systems help you manage customer relationships, human resources, and enterprise processes efficiently.',
+    image: '/images/home/backend.svg',
+  },
+  {
     id: '05',
+    title: 'Communication & Marketing Tools',
+    description:
+      'Powerful marketing automation tools including WhatsApp bulk messaging, email marketing and bulk email sender, and SMS marketing solutions. Reach your audience effectively across multiple channels.',
+    image: '/images/home/mobile.svg',
+  },
+  {
+    id: '06',
+    title: 'Digital Marketing Services',
+    description:
+      'Complete digital marketing solutions including social media marketing (SMM), paid advertising on Facebook, Instagram, LinkedIn & X, lead generation, brand growth, and online promotion strategies.',
+    image: '/images/home/uiux.svg',
+  },
+  {
+    id: '07',
+    title: 'IT Training & Skill Development',
+    description:
+      'Industry-focused training programs in Java, Python, React, and full stack development. Learn with real-time projects, expert guidance, and hands-on experience to accelerate your tech career.',
+    image: '/images/home/frontend.svg',
+  },
+  {
+    id: '08',
+    title: 'Job Support & Career Services',
+    description:
+      'Comprehensive career support including job support (backend/backdoor support), interview support, professional resume preparation, and placement assistance to help you land your dream job.',
+    image: '/images/home/backend.svg',
+  },
+  {
+    id: '09',
+    title: 'Civil & Design Courses',
+    description:
+      'Professional training in planning and drafting, 3D design, interior design, and architectural visualization. Master the tools and techniques used by industry professionals.',
+    image: '/images/home/uiux.svg',
+  },
+  {
+    id: '10',
     title: 'Artificial Intelligence',
     description:
       'We harness the power of AI to transform raw information into intelligent insights that drive decision-making. Through advanced systems built by experienced AI software developers, organizations gain the clarity and precision needed for long-term growth.',
     image: '/images/home/ai.svg',
   },
-  // {
-  //   id: '06',
-  //   title: 'Data Analysis & Data science',
-  //   description:
-  //     'We excel at uncovering data narratives through visualizations, forecasting, and insights that support strategic choices. These techniques are often embedded in custom application development services where real-time data plays a pivotal role in decision-making.',
-  //   image: '/images/home/data.svg',
-  // },
   {
-    id: '07',
+    id: '11',
     title: 'Managed Cloud & DevOps',
     description:
       'We specialize in optimizing your cloud infrastructure and streamlining operations through Managed Cloud and DevOps services. These efforts are supported by custom web software development practices that emphasize automation, uptime, and agility.',
     image: '/images/home/cloud.svg',
   },
   {
-    id: '08',
-    title: 'No Code Development Tools',
+    id: '12',
+    title: 'Data Analysis & Data Science',
     description:
-      'Quickly build applications without needing technical skills. Create solutions with simple drag-and-drop tools. Ideal for teams that need to move fast without relying on developers.',
-    image: '/images/home/uiux.svg',
+      'We excel at uncovering data narratives through visualizations, forecasting, and insights that support strategic choices. These techniques are often embedded in custom application development services where real-time data plays a pivotal role in decision-making.',
+    image: '/images/home/backend.svg',
   },
 ];
 

@@ -848,7 +848,7 @@ export default function DigitalMarketingPage() {
                 className="px-8 py-4 bg-white/10 border-2 border-white/20 text-white rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Call Now: +91 9381820806
+                Call Now: +91 93818 20806
               </motion.a>
             </div>
           </motion.div>

@@ -474,8 +474,8 @@ export default function CloudDevOpsPage() {
                 <a href="mailto:devops@example.com" className="hover:text-cyan-500 transition-colors">
                   📧 devops@example.com
                 </a>
-                <a href="tel:+1234567890" className="hover:text-cyan-500 transition-colors">
-                  📞 +1 (234) 567-890
+                <a href="tel:+919381820806" className="hover:text-cyan-500 transition-colors">
+                  📞 +91 93818 20806
                 </a>
               </div>
             </div>
