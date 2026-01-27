@@ -234,26 +234,56 @@ export default function Services() {
   });
 
   return (
-    <section
-      ref={containerRef}
-      id="services"
-      className="relative bg-black min-h-[350vh]"
-    >
-      {/* Sticky container that holds the layout */}
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center">
-        <div className="container-custom w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-[60px_1fr_1fr] gap-8 lg:gap-20 w-full items-center">
-            
-            {/* Timeline (far left) - hidden on mobile */}
-            <div className="hidden lg:flex relative items-center">
-              <div className="relative flex flex-col items-center h-[500px]">
-                {/* Vertical line */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
-                
-                {/* Timeline dots */}
-                <div className="relative flex flex-col justify-between h-full z-10">
+    <>
+      {/* Desktop/Tablet Version - Hidden on Mobile */}
+      <section
+        ref={containerRef}
+        id="services"
+        className="hidden md:block relative bg-black min-h-[350vh]"
+      >
+        {/* Sticky container that holds the layout */}
+        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+          <div className="container-custom w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-[60px_1fr_1fr] gap-8 lg:gap-20 w-full items-center">
+              
+              {/* Timeline (far left) - hidden on mobile */}
+              <div className="hidden lg:flex relative items-center">
+                <div className="relative flex flex-col items-center h-[500px]">
+                  {/* Vertical line */}
+                  <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
+                  
+                  {/* Timeline dots */}
+                  <div className="relative flex flex-col justify-between h-full z-10">
+                    {services.map((service, index) => (
+                      <TimelineDot
+                        key={service.id}
+                        index={index}
+                        scrollProgress={scrollYProgress}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Left Content (sticky) */}
+              <div className="relative h-full flex items-center">
+                <div className="relative w-full h-96">
                   {services.map((service, index) => (
-                    <TimelineDot
+                    <ServiceContent
+                      key={service.id}
+                      service={service}
+                      index={index}
+                      scrollProgress={scrollYProgress}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Visual (sticky) - hidden on mobile */}
+              <div className="hidden lg:block relative h-full flex items-center">
+                <div className="relative w-full h-96">
+                  {services.map((service, index) => (
+                    <ServiceVisual
                       key={service.id}
                       index={index}
                       scrollProgress={scrollYProgress}
@@ -262,36 +292,54 @@ export default function Services() {
                 </div>
               </div>
             </div>
-
-            {/* Left Content (sticky) */}
-            <div className="relative h-full flex items-center">
-              <div className="relative w-full h-96">
-                {services.map((service, index) => (
-                  <ServiceContent
-                    key={service.id}
-                    service={service}
-                    index={index}
-                    scrollProgress={scrollYProgress}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Right Visual (sticky) - hidden on mobile */}
-            <div className="hidden lg:block relative h-full flex items-center">
-              <div className="relative w-full h-96">
-                {services.map((service, index) => (
-                  <ServiceVisual
-                    key={service.id}
-                    index={index}
-                    scrollProgress={scrollYProgress}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Mobile Version - Compact Cards */}
+      <section className="md:hidden relative bg-black py-12 px-4">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-2">
+            Our <span className="gradient-text">Services</span>
+          </h2>
+          <p className="text-gray-light text-sm">Comprehensive solutions for your business</p>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-3">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-xl p-3 border border-white/10"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-10 h-10 relative mb-2">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-bold text-white leading-tight mb-1">{service.title}</h3>
+                  <p className="text-xs text-gray-light leading-relaxed line-clamp-3 mb-2">{service.description}</p>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    Learn More →
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

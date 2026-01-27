@@ -33,7 +33,7 @@ export default function Blog() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="section-padding bg-black relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-black relative overflow-hidden px-4">
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -41,18 +41,18 @@ export default function Blog() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Latest <span className="gradient-text">Blogs & Articles</span>
           </h2>
-          <p className="text-gray-light text-lg max-w-2xl mx-auto">
+          <p className="text-gray-light text-sm md:text-base lg:text-lg max-w-2xl mx-auto px-4">
             Stay updated with the latest trends and insights in software development
           </p>
         </motion.div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
           {blogs.map((blog, index) => (
             <motion.article
               key={index}
@@ -60,15 +60,15 @@ export default function Blog() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group bg-dark-800 rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              className="group bg-dark-800 rounded-xl md:rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer"
             >
               {/* Image */}
-              <div className="relative h-48 bg-dark-700 overflow-hidden">
+              <div className="relative h-40 md:h-48 bg-dark-700 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-cyan-500/20 group-hover:scale-110 transition-transform duration-500" />
                 {/* Placeholder for blog image */}
                 <div className="absolute inset-0 flex items-center justify-center text-gray-dark">
                   <svg
-                    className="w-16 h-16"
+                    className="w-12 h-12 md:w-16 md:h-16"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -84,22 +84,22 @@ export default function Blog() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 {/* Category & Date */}
-                <div className="flex items-center justify-between mb-3 text-sm">
-                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
+                <div className="flex items-center justify-between mb-2 md:mb-3 text-xs md:text-sm">
+                  <span className="px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
                     {blog.category}
                   </span>
                   <span className="text-gray-dark">{blog.readTime}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-white mb-3 line-clamp-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-sm md:text-base lg:text-lg font-semibold text-white mb-2 md:mb-3 line-clamp-2 md:line-clamp-3 group-hover:text-primary transition-colors duration-300 leading-snug">
                   {blog.title}
                 </h3>
 
                 {/* Date */}
-                <p className="text-sm text-gray-dark">{blog.date}</p>
+                <p className="text-xs md:text-sm text-gray-dark">{blog.date}</p>
               </div>
             </motion.article>
           ))}
@@ -115,7 +115,7 @@ export default function Blog() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-dark-800 text-white rounded-lg font-medium hover:bg-primary hover:text-white transition-all duration-200 border border-white/10 hover:border-primary"
+            className="px-6 md:px-8 py-2.5 md:py-3 bg-dark-800 text-white text-sm md:text-base rounded-lg font-medium hover:bg-primary hover:text-white transition-all duration-200 border border-white/10 hover:border-primary"
           >
             Read More
           </motion.button>

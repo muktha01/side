@@ -68,7 +68,7 @@ export default function Home() {
       {/* <CaseStudy /> */}
       {/* <WorldwidePresence /> */}
       <Blog />
-
+      <Footer />
     </div>
   );
 }

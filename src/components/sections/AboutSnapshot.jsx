@@ -32,9 +32,9 @@ export default function AboutSnapshot() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent">
+    <section className="py-12 md:py-20 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -42,24 +42,24 @@ export default function AboutSnapshot() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
-              <span className="text-cyan-400 font-semibold">About Sdev</span>
+            <div className="inline-block mb-4 md:mb-6 px-4 md:px-6 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
+              <span className="text-cyan-400 font-semibold text-sm md:text-base">About Sdev</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
               Building Digital Solutions Since{' '}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 2020
               </span>
             </h2>
 
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 leading-relaxed">
               Sdev is a dynamic digital agency specializing in innovative web and mobile solutions, 
               cutting-edge AI tools, comprehensive digital marketing strategies, professional training programs, 
               and flexible financial solutions.
             </p>
 
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
               Our mission is to empower businesses and individuals with technology-driven solutions 
               that transform ideas into reality. From startups to established enterprises, we deliver 
               excellence in every project we undertake.
@@ -69,7 +69,7 @@ export default function AboutSnapshot() {
               href="/about"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold text-sm md:text-base shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300"
             >
               Learn More About Us
             </motion.a>
@@ -81,7 +81,7 @@ export default function AboutSnapshot() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-3 md:gap-6"
           >
             {highlights.map((item, index) => (
               <motion.div
@@ -91,13 +91,13 @@ export default function AboutSnapshot() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-white/10 to-white/[0.02] rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+                className="bg-gradient-to-br from-white/10 to-white/[0.02] rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-1">{item.number}</div>
-                <div className="text-sm font-semibold text-cyan-400 mb-1">{item.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">{item.number}</div>
+                <div className="text-xs md:text-sm font-semibold text-cyan-400 mb-1">{item.label}</div>
                 <div className="text-xs text-gray-400">{item.description}</div>
               </motion.div>
             ))}

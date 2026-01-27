@@ -48,7 +48,7 @@ export default function ProductsOverview() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-12 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10" />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -57,25 +57,25 @@ export default function ProductsOverview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <div className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
-            <span className="text-cyan-400 font-semibold">Our Products</span>
+          <div className="inline-block mb-4 md:mb-6 px-4 md:px-6 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
+            <span className="text-cyan-400 font-semibold text-sm md:text-base">Our Products</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 px-4">
             Ready-to-Use Digital{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Products
             </span>
           </h2>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             Powerful SaaS solutions designed to streamline your business operations
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
           {products.map((product, index) => (
             <motion.div
               key={index}
@@ -84,22 +84,22 @@ export default function ProductsOverview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+              className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
             >
-              <div className={`w-14 h-14 bg-gradient-to-r ${product.color} rounded-xl flex items-center justify-center mb-4`}>
-                <product.icon className="w-7 h-7 text-white" />
+              <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r ${product.color} rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4`}>
+                <product.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-2">{product.name}</h3>
-              <p className="text-gray-400 text-sm mb-4 min-h-[48px]">{product.description}</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">{product.name}</h3>
+              <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4 min-h-[40px] md:min-h-[48px] line-clamp-2 md:line-clamp-none">{product.description}</p>
 
-              <div className="text-2xl font-bold text-cyan-400 mb-4">{product.price}</div>
+              <div className="text-xl md:text-2xl font-bold text-cyan-400 mb-3 md:mb-4">{product.price}</div>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 md:space-y-2 mb-4 md:mb-6">
                 {product.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                    <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                    {feature}
+                  <li key={idx} className="flex items-center gap-2 text-gray-300 text-xs md:text-sm">
+                    <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-cyan-400 rounded-full flex-shrink-0"></div>
+                    <span className="line-clamp-1">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -108,7 +108,7 @@ export default function ProductsOverview() {
                 href="/products"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`block w-full text-center px-4 py-2.5 bg-gradient-to-r ${product.color} text-white rounded-lg font-semibold text-sm transition-all duration-300`}
+                className={`block w-full text-center px-4 py-2 md:py-2.5 bg-gradient-to-r ${product.color} text-white rounded-lg font-semibold text-xs md:text-sm transition-all duration-300`}
               >
                 View Details
               </motion.a>
@@ -127,10 +127,10 @@ export default function ProductsOverview() {
             href="/products"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold text-sm md:text-base shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300"
           >
             Explore All Products
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </motion.a>
         </motion.div>
       </div>
