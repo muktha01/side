@@ -1,8 +1,17 @@
 'use client';
 import { useState } from 'react';
+import { BarChart3, TrendingUp, Settings, Target, Users, Eye, Zap, Database, Search, Package, Mail, Waves, DollarSign, Megaphone, Wallet, Code, Smartphone, ShoppingCart, Monitor, Clock } from 'lucide-react';
 
 export default function DataAnalyticsPage() {
   const [openFaq, setOpenFaq] = useState(null);
+
+  // Icon wrapper component
+  const IconWrapper = ({ icon: Icon, className = "w-12 h-12 text-blue-500" }) => {
+    if (typeof Icon === 'string') {
+      return <div className="text-5xl">{Icon}</div>;
+    }
+    return <Icon className={className} strokeWidth={1.5} />;
+  };
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -12,7 +21,7 @@ export default function DataAnalyticsPage() {
     {
       title: "Business Intelligence & Reporting",
       description: "Custom dashboards, KPI tracking, executive reporting, and real-time business insights.",
-      icon: "📊",
+      icon: BarChart3,
       features: ["Interactive Dashboards", "KPI Tracking", "Executive Reports", "Real-time Analytics"]
     },
     {
@@ -36,79 +45,79 @@ export default function DataAnalyticsPage() {
     {
       title: "Data Visualization",
       description: "Interactive dashboards, custom reports, data storytelling, and visual analytics.",
-      icon: "📈",
+      icon: TrendingUp,
       features: ["Interactive Dashboards", "Custom Reports", "Data Storytelling", "Visual Analytics"]
     },
     {
       title: "Data Engineering",
       description: "Pipeline development, data integration, automation, and infrastructure management.",
-      icon: "⚙️",
+      icon: Settings,
       features: ["Pipeline Development", "Data Integration", "Automation", "Infrastructure"]
     },
     {
       title: "Data Strategy & Consulting",
       description: "Data governance, roadmap planning, architecture design, and best practices.",
-      icon: "🎯",
+      icon: Target,
       features: ["Data Governance", "Roadmap Planning", "Architecture Design", "Best Practices"]
     },
     {
       title: "Self-Service Analytics",
       description: "Empowering business users with tools, training, and self-service capabilities.",
-      icon: "👥",
+      icon: Users,
       features: ["User Training", "Tool Setup", "Documentation", "Support"]
     }
   ];
 
   const technologies = [
-    { name: "Tableau", icon: "📊" },
-    { name: "Power BI", icon: "📈" },
-    { name: "Looker", icon: "👁️" },
-    { name: "Apache Spark", icon: "⚡" },
-    { name: "Hadoop", icon: "🐘" },
-    { name: "Snowflake", icon: "❄️" },
-    { name: "BigQuery", icon: "🔍" },
-    { name: "Redshift", icon: "📦" },
-    { name: "Python", icon: "🐍" },
-    { name: "SQL", icon: "🗃️" },
-    { name: "Kafka", icon: "📨" },
-    { name: "Airflow", icon: "🌊" }
+    { name: "Tableau", icon: BarChart3 },
+    { name: "Power BI", icon: TrendingUp },
+    { name: "Looker", icon: Eye },
+    { name: "Apache Spark", icon: Zap },
+    { name: "Hadoop", icon: Database },
+    { name: "Snowflake", icon: Zap },
+    { name: "BigQuery", icon: Search },
+    { name: "Redshift", icon: Package },
+    { name: "Python", icon: Code },
+    { name: "SQL", icon: Database },
+    { name: "Kafka", icon: Mail },
+    { name: "Airflow", icon: Waves }
   ];
 
   const businessFunctions = [
     {
       title: "Sales Analytics",
       description: "Pipeline analysis, sales forecasting, customer acquisition costs, and revenue optimization.",
-      icon: "💰",
+      icon: DollarSign,
       metrics: ["Pipeline Velocity", "Win Rate Analysis", "CAC Tracking", "Revenue Forecasting"]
     },
     {
       title: "Marketing Analytics",
       description: "Campaign performance, attribution modeling, customer journey, and ROI analysis.",
-      icon: "📣",
+      icon: Megaphone,
       metrics: ["Campaign ROI", "Attribution Models", "Customer Journey", "Channel Performance"]
     },
     {
       title: "Financial Analytics",
       description: "Revenue analysis, budget forecasting, profitability tracking, and financial reporting.",
-      icon: "💵",
+      icon: Wallet,
       metrics: ["Revenue Analysis", "Budget Forecasting", "Profitability", "Financial Reports"]
     },
     {
       title: "Operations Analytics",
       description: "Process optimization, supply chain analytics, resource utilization, and efficiency metrics.",
-      icon: "⚙️",
+      icon: Settings,
       metrics: ["Process Efficiency", "Supply Chain", "Resource Utilization", "Operational KPIs"]
     },
     {
       title: "Customer Analytics",
       description: "Behavior analysis, churn prediction, lifetime value, and segmentation.",
-      icon: "👥",
+      icon: Users,
       metrics: ["Behavior Analysis", "Churn Prediction", "CLV Calculation", "Segmentation"]
     },
     {
       title: "Product Analytics",
       description: "Usage metrics, feature adoption, A/B testing, and product performance.",
-      icon: "📱",
+      icon: Smartphone,
       metrics: ["Usage Metrics", "Feature Adoption", "A/B Testing", "Performance Tracking"]
     }
   ];
@@ -117,7 +126,7 @@ export default function DataAnalyticsPage() {
     {
       title: "E-commerce & Retail",
       description: "Customer behavior analysis, conversion optimization, inventory analytics, and sales forecasting.",
-      icon: "🛒",
+      icon: ShoppingCart,
       solutions: ["Conversion Optimization", "Inventory Analytics", "Customer Insights", "Sales Forecasting"]
     },
     {
@@ -141,7 +150,7 @@ export default function DataAnalyticsPage() {
     {
       title: "SaaS & Technology",
       description: "User engagement, churn analysis, product metrics, and growth analytics.",
-      icon: "💻",
+      icon: Monitor,
       solutions: ["User Engagement", "Churn Analysis", "Product Metrics", "Growth Analytics"]
     },
     {
@@ -195,22 +204,22 @@ export default function DataAnalyticsPage() {
     {
       metric: "80%",
       description: "Reduction in Reporting Time",
-      icon: "⚡"
+      icon: Zap
     },
     {
       metric: "₹16Cr",
       description: "Cost Savings Identified",
-      icon: "💰"
+      icon: DollarSign
     },
     {
       metric: "92%",
       description: "Forecast Accuracy Achieved",
-      icon: "🎯"
+      icon: Target
     },
     {
       metric: "Real-time",
       description: "Decision Making Enabled",
-      icon: "⏱️"
+      icon: Clock
     }
   ];
 
@@ -378,7 +387,7 @@ export default function DataAnalyticsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div key={index} className="group glass rounded-2xl p-6 hover:bg-white/10 transition-all cursor-pointer border border-transparent hover:border-teal-500/30">
-                <div className="text-5xl mb-4">{service.icon}</div>
+                <div className="mb-4"><IconWrapper icon={service.icon} className="w-12 h-12 text-teal-400" /></div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-teal-400 transition-colors">{service.title}</h3>
                 <p className="text-gray-400 text-sm mb-4">{service.description}</p>
                 <ul className="space-y-2">
@@ -410,7 +419,7 @@ export default function DataAnalyticsPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
             {technologies.map((tech, index) => (
               <div key={index} className="glass rounded-xl p-6 text-center hover:bg-white/10 transition-all cursor-pointer group">
-                <div className="text-4xl mb-3">{tech.icon}</div>
+                <div className="mb-3 flex justify-center"><IconWrapper icon={tech.icon} className="w-10 h-10 text-blue-400" /></div>
                 <p className="text-sm font-semibold group-hover:text-teal-400 transition-colors">{tech.name}</p>
               </div>
             ))}
@@ -432,8 +441,8 @@ export default function DataAnalyticsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {businessFunctions.map((func, index) => (
-              <div key={index} className="glass rounded-2xl p-8 hover:bg-white/10 transition-all group">
-                <div className="text-5xl mb-4">{func.icon}</div>
+              <div key={index} className="glass rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="mb-4"><IconWrapper icon={func.icon} className="w-12 h-12 text-green-400" /></div>
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-teal-400 transition-colors">{func.title}</h3>
                 <p className="text-gray-400 mb-6">{func.description}</p>
                 <div className="space-y-2">
@@ -464,8 +473,8 @@ export default function DataAnalyticsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry, index) => (
-              <div key={index} className="glass rounded-2xl p-8 hover:bg-white/10 transition-all group">
-                <div className="text-5xl mb-4">{industry.icon}</div>
+              <div key={index} className="glass rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="mb-4"><IconWrapper icon={industry.icon} className="w-12 h-12 text-purple-400" /></div>
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-green-400 transition-colors">{industry.title}</h3>
                 <p className="text-gray-400 mb-6">{industry.description}</p>
                 <div className="space-y-2">
@@ -536,7 +545,7 @@ export default function DataAnalyticsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {results.map((result, index) => (
               <div key={index} className="glass rounded-2xl p-8 text-center hover:bg-white/10 transition-all">
-                <div className="text-5xl mb-4">{result.icon}</div>
+                <div className="mb-4 flex justify-center"><IconWrapper icon={result.icon} className="w-12 h-12 text-cyan-400" /></div>
                 <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-green-500 to-teal-400 bg-clip-text text-transparent">
                   {result.metric}
                 </div>

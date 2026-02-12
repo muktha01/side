@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView, useAnimation } from 'framer-motion';
+import { Palette, Sparkles, Target, Zap, Search, CheckCircle, Smartphone } from 'lucide-react';
 
 export default function UIUXDesignPage() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -18,6 +19,13 @@ export default function UIUXDesignPage() {
     target: processRef,
     offset: ['start start', 'end end'],
   });
+
+  // Icon wrapper to handle rendering
+  const IconWrapper = ({ icon: Icon, className = "w-12 h-12" }) => {
+    if (!Icon) return null;
+    if (typeof Icon === 'string') return Icon;
+    return <Icon className={className} strokeWidth={1.5} />;
+  };
 
   const stats = [
     { value: '70%', label: 'Increase in User Engagement' },
@@ -60,18 +68,18 @@ export default function UIUXDesignPage() {
   }
 
   const tools = [
-    { name: 'Figma', icon: '🎨' },
+    { name: 'Figma', icon: Palette },
     { name: 'Sketch', icon: '💎' },
-    { name: 'Adobe XD', icon: '✨' },
-    { name: 'Zeplin', icon: '🎯' },
+    { name: 'Adobe XD', icon: Sparkles },
+    { name: 'Zeplin', icon: Target },
     { name: 'Adobe Illustrator', icon: '🖌️' },
-    { name: 'Framer', icon: '⚡' },
+    { name: 'Framer', icon: Zap },
   ];
 
   const services = [
     {
       title: 'User Research & Analysis',
-      icon: '🔍',
+      icon: Search,
       description: 'Deep dive into user behavior, needs, and pain points through surveys, interviews, and data analysis.',
     },
     {
@@ -81,17 +89,17 @@ export default function UIUXDesignPage() {
     },
     {
       title: 'Visual Design',
-      icon: '🎨',
+      icon: Palette,
       description: 'Craft beautiful, brand-aligned interfaces with modern design systems and style guides.',
     },
     {
       title: 'Usability Testing',
-      icon: '✅',
+      icon: CheckCircle,
       description: 'Validate designs with real users to ensure intuitive navigation and optimal user experience.',
     },
     {
       title: 'Mobile App Design',
-      icon: '📱',
+      icon: Smartphone,
       description: 'Design responsive mobile experiences for iOS and Android platforms.',
     },
     {
@@ -394,7 +402,7 @@ export default function UIUXDesignPage() {
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 3, delay: index * 0.2, repeat: Infinity }}
                 >
-                  {service.icon}
+                  <IconWrapper icon={service.icon} className="w-14 h-14 mx-auto text-cyan-400" />
                 </motion.div>
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">{service.title}</h3>
                 <p className="text-white/70 leading-relaxed">{service.description}</p>
@@ -436,7 +444,7 @@ export default function UIUXDesignPage() {
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 3, delay: index * 0.2, repeat: Infinity }}
                 >
-                  {tool.icon}
+                  <IconWrapper icon={tool.icon} className="w-12 h-12 mx-auto text-cyan-400" />
                 </motion.div>
                 <p className="text-white/80 font-medium">{tool.name}</p>
               </motion.div>

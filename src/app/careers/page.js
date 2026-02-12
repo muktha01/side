@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/sections/Header';
+import { Globe, TrendingUp, DollarSign, Heart, Award, Users, Scale, BookOpen, HeartPulse } from 'lucide-react';
 
 export default function CareersPage() {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -25,32 +26,32 @@ export default function CareersPage() {
 
   const benefits = [
     {
-      icon: '🌍',
+      icon: Globe,
       title: 'Remote Work',
       description: 'Work from anywhere in the world with flexible hours'
     },
     {
-      icon: '📈',
+      icon: TrendingUp,
       title: 'Growth Opportunities',
       description: 'Clear career progression paths and mentorship programs'
     },
     {
-      icon: '💰',
+      icon: DollarSign,
       title: 'Competitive Pay',
       description: 'Market-leading salaries and performance bonuses'
     },
     {
-      icon: '⚖️',
+      icon: Scale,
       title: 'Work-Life Balance',
       description: 'Flexible schedules and generous PTO policy'
     },
     {
-      icon: '📚',
+      icon: BookOpen,
       title: 'Learning Budget',
       description: 'Annual budget for courses, conferences, and certifications'
     },
     {
-      icon: '🏥',
+      icon: HeartPulse,
       title: 'Health Benefits',
       description: 'Comprehensive health insurance and wellness programs'
     }
@@ -286,7 +287,12 @@ export default function CareersPage() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-lg border border-white/10 rounded-2xl p-8 hover:border-[#0EA5E9]/50 hover:shadow-lg hover:shadow-[#0EA5E9]/20 transition-all duration-300 group"
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{benefit.icon}</div>
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {benefit.icon && React.createElement(benefit.icon, { 
+                    className: "w-12 h-12 text-cyan-400",
+                    strokeWidth: 1.5 
+                  })}
+                </div>
                 <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-[#0EA5E9] transition-colors duration-300">{benefit.title}</h3>
                 <p className="text-white/60">{benefit.description}</p>
               </motion.div>

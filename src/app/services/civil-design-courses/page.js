@@ -1,202 +1,277 @@
 'use client';
 
-import { useState } from 'react';
+import CategoryHero from '@/components/sections/services/CategoryHero';
+import ServiceShowcase from '@/components/sections/services/ServiceShowcase';
+import ProcessTimeline from '@/components/sections/services/ProcessTimeline';
+import PricingSection from '@/components/sections/services/PricingSection';
+import TestimonialsPreview from '@/components/sections/TestimonialsPreview';
+import FinalCTA from '@/components/sections/services/FinalCTA';
+import FAQAccordion from '@/components/sections/services/FAQAccordion';
+import ComparisonTable from '@/components/sections/services/ComparisonTable';
+import LeadCaptureForm from '@/components/sections/services/LeadCaptureForm';
+import { Construction, Ruler, HardHat, GraduationCap, Building } from 'lucide-react';
 
-export default function CivilDesignCoursesPage() {
-  const [openFaq, setOpenFaq] = useState(null);
-
-  const toggleFaq = (index) => {
-    setOpenFaq(openFaq === index ? null : index);
+export default function RealEstatePage() {
+  const categoryData = {
+    id: 'real-estate',
+    title: 'Real Estate & Construction Services',
+    description: 'From planning to execution - complete solutions for your construction and real estate projects.',
+    icon: Construction,
+    gradient: 'from-slate-500 to-zinc-500',
+    benefits: [
+      'End-to-end project management',
+      'Expert architectural design',
+      'Quality construction standards',
+      'Licensed contractors',
+      'Transparent pricing',
+      'Timely project delivery'
+    ]
   };
-
-  const stats = [
-    { value: '1000+', label: 'Students Trained' },
-    { value: '25+', label: 'Expert Instructors' },
-    { value: '90%', label: 'Placement Rate' }
-  ];
 
   const services = [
     {
-      title: 'Civil Engineering Courses',
-      description: 'Comprehensive civil engineering training covering structural design, construction management, and more.',
+      id: 'architectural-design',
+      name: 'Architectural Design & Planning',
+      icon: Ruler,
+      description: 'Professional architectural design services for residential and commercial projects.',
       features: [
-        'Structural analysis and design',
-        'Construction planning',
-        'Site management techniques',
-        'Civil engineering software training'
+        '2D & 3D design',
+        'Floor plan creation',
+        'Elevation design',
+        'Interior planning',
+        'Permit assistance',
+        'Unlimited revisions'
       ],
-      image: 'https://placehold.co/500x400/0f172a/06b6d4?text=Civil+Engineering',
-      pricing: 'Starting from ₹40,000'
+      startingPrice: 2499,
+      popular: true
     },
     {
-      title: '3D Design & Modeling',
-      description: 'Master 3D design tools like AutoCAD, Revit, SketchUp, and 3ds Max for architectural visualization.',
+      id: 'construction-management',
+      name: 'Construction & Project Management',
+      icon: HardHat,
+      description: 'Complete construction services with experienced contractors and project managers.',
       features: [
-        'AutoCAD 2D/3D drafting',
-        'Revit BIM modeling',
-        'SketchUp architectural design',
-        '3ds Max rendering'
+        'Site management',
+        'Quality control',
+        'Material procurement',
+        'Labor management',
+        'Progress tracking',
+        'Budget management'
       ],
-      image: 'https://placehold.co/500x400/0f172a/3b82f6?text=3D+Design',
-      pricing: 'Starting from ₹35,000'
+      startingPrice: 'Custom'
     },
     {
-      title: 'Interior Design Courses',
-      description: 'Professional interior design training with hands-on projects and industry-standard tools.',
+      id: 'civil-training',
+      name: 'Civil Engineering Training',
+      icon: GraduationCap,
+      description: 'Professional training programs for civil engineers and design professionals.',
       features: [
-        'Space planning and layout',
-        'Color theory and materials',
-        'Interior design software',
-        'Portfolio development'
+        'AutoCAD training',
+        'Revit & BIM',
+        'Structural design',
+        'Site surveying',
+        'Project management',
+        'Certification programs'
       ],
-      image: 'https://placehold.co/500x400/0f172a/8b5cf6?text=Interior+Design',
-      pricing: 'Starting from ₹30,000'
+      startingPrice: 999
+    },
+    {
+      id: 'real-estate-consulting',
+      name: 'Real Estate Consulting',
+      icon: Building,
+      description: 'Expert guidance for property investment and real estate development.',
+      features: [
+        'Market analysis',
+        'Investment advice',
+        'Property valuation',
+        'Legal assistance',
+        'Documentation support',
+        'ROI projections'
+      ],
+      startingPrice: 1499
+    }
+  ];
+
+  const process = [
+    {
+      number: 1,
+      title: 'Consultation & Site Visit',
+      description: 'Initial consultation to understand requirements and site visit for assessment.',
+      duration: '1 week',
+      deliverables: [
+        'Requirement analysis',
+        'Site assessment report',
+        'Feasibility study',
+        'Preliminary budget'
+      ]
+    },
+    {
+      number: 2,
+      title: 'Design & Planning',
+      description: 'Create detailed architectural designs and obtain necessary approvals.',
+      duration: '2-4 weeks',
+      deliverables: [
+        'Architectural drawings',
+        '3D visualizations',
+        'Structural plans',
+        'Permit applications'
+      ]
+    },
+    {
+      number: 3,
+      title: 'Approval & Contracting',
+      description: 'Finalize designs, get approvals, and sign construction contracts.',
+      duration: '2-3 weeks',
+      deliverables: [
+        'Approved plans',
+        'Signed contracts',
+        'Work schedule',
+        'Material specifications'
+      ]
+    },
+    {
+      number: 4,
+      title: 'Construction & Supervision',
+      description: 'Execute construction with regular quality checks and progress monitoring.',
+      duration: '6-12 months',
+      deliverables: [
+        'Construction execution',
+        'Quality inspections',
+        'Progress reports',
+        'Change orders'
+      ]
+    },
+    {
+      number: 5,
+      title: 'Handover & Warranty',
+      description: 'Final inspection, project handover, and warranty documentation.',
+      duration: '1-2 weeks',
+      deliverables: [
+        'Final inspection',
+        'Completion certificate',
+        'As-built drawings',
+        'Warranty documents'
+      ]
+    }
+  ];
+
+  const pricingPlans = [
+    {
+      name: 'Design Package',
+      price: 2499,
+      priceAnnual: 24990,
+      description: 'Complete architectural design services',
+      features: [
+        'Site analysis',
+        '2D floor plans',
+        '3D visualizations',
+        'Elevation designs',
+        'Interior layouts',
+        '3 revision rounds',
+        'Permit assistance'
+      ],
+      cta: 'Get Started',
+      popular: false
+    },
+    {
+      name: 'Design + Build',
+      price: 'Custom',
+      priceAnnual: 'Custom',
+      description: 'End-to-end construction solution',
+      features: [
+        'Complete design services',
+        'Construction management',
+        'Quality materials',
+        'Licensed contractors',
+        'Project supervision',
+        'Progress tracking',
+        '12-month warranty',
+        'Post-construction support'
+      ],
+      cta: 'Get Quote',
+      popular: true
+    },
+    {
+      name: 'Training Program',
+      price: 999,
+      priceAnnual: 9990,
+      savings: 1998,
+      description: 'Professional civil engineering courses',
+      features: [
+        'AutoCAD training',
+        'Revit & BIM',
+        'Structural design',
+        'Live projects',
+        'Certification',
+        'Job assistance',
+        'Lifetime access',
+        'Industry mentorship'
+      ],
+      cta: 'Enroll Now',
+      popular: false
     }
   ];
 
   const faqs = [
     {
-      question: 'What courses do you offer in civil and design?',
-      answer: 'We offer comprehensive courses in civil engineering, structural design, construction planning, AutoCAD, Revit, SketchUp, 3ds Max, interior design, and architectural visualization. All courses include hands-on training with industry-standard software.'
+      question: 'Do you provide both design and construction services?',
+      answer: 'Yes, we offer comprehensive end-to-end solutions. You can choose our design-only package for architectural plans and visualizations, or opt for our complete Design + Build package which includes construction management, contractor coordination, and project execution.'
     },
     {
-      question: 'Are these courses suitable for beginners?',
-      answer: 'Yes! We offer courses for all levels - from beginners with no prior experience to advanced professionals looking to upgrade their skills. Our instructors adapt the pace and content to match student needs.'
+      question: 'How long does it take to complete an architectural design?',
+      answer: 'Typical design timelines are 2-4 weeks for residential projects and 4-8 weeks for commercial projects. This includes initial consultations, conceptual designs, detailed drawings, and revisions. Complex projects may require additional time.'
     },
     {
-      question: 'What is the course duration?',
-      answer: 'Course duration varies: short-term courses run 1-3 months, diploma programs are 6 months, and advanced certification programs can be 9-12 months. We also offer weekend and flexible batches for working professionals.'
+      question: 'What software and tools do you use for design?',
+      answer: 'We use industry-standard tools including AutoCAD for 2D drawings, Revit for BIM modeling, 3ds Max and SketchUp for 3D visualizations, and Lumion for realistic renderings. All deliverables are provided in commonly used file formats.'
     },
     {
-      question: 'Do you provide placement assistance?',
-      answer: 'Yes, we provide comprehensive placement assistance including resume building, interview preparation, and connections with our industry partners. Our placement team works actively to help students secure relevant positions.'
+      question: 'Do you help with building permits and approvals?',
+      answer: 'Absolutely! Our design packages include permit assistance. We prepare all necessary documentation, drawings, and reports required for municipal approvals. We can also liaise with local authorities on your behalf to streamline the approval process.'
     },
     {
-      question: 'Will I get certification after completion?',
-      answer: 'Yes, upon successful completion of the course and final assessment, you\'ll receive an industry-recognized certificate. For software courses, we also help you prepare for official vendor certifications like Autodesk.'
+      question: 'What is included in the civil design training program?',
+      answer: 'Our training program covers AutoCAD 2D/3D, Revit Architecture & Structure, BIM fundamentals, structural design basics, quantity estimation, and project management. Students work on live projects and receive industry-recognized certification upon completion.'
+    },
+    {
+      question: 'Do you provide warranty on construction work?',
+      answer: 'Yes, all our construction projects come with a comprehensive 12-month warranty covering structural work, finishes, and installations. We also offer post-construction support for any adjustments or concerns that arise after project completion.'
     }
   ];
 
+  const comparisonFeatures = [
+    'Design deliverables',
+    'Number of revisions',
+    '3D visualization quality',
+    'Construction management',
+    'Project timeline',
+    'Contractor quality',
+    'Permit assistance',
+    'Post-completion warranty',
+    'Training & certification',
+    'Job placement support'
+  ];
+
   return (
-    <div className="bg-black text-white min-h-screen">
-      
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-40 top-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute -right-40 top-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 max-w-6xl mx-auto leading-tight">
-              <span className="gradient-text">Civil & Design Courses</span>
-              <br />
-              Build Your Future in Design
-            </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mt-8">
-              Professional training in civil engineering, 3D design, and interior design with placement support
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a href="#contact" className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
-                Enroll Now
-              </a>
-              <a href="#services" className="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition-all duration-300 border border-gray-700 hover:border-cyan-500">
-                View Courses
-              </a>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-                <div className="text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-950">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Training Programs</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Industry-focused courses designed to make you job-ready
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden hover:border-cyan-500 transition-all duration-300">
-                <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-400 mb-4">{service.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-300">
-                        <span className="text-cyan-500 mt-1">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="text-cyan-500 font-semibold">{service.pricing}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Common questions about our civil and design courses
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-800/50 transition-colors"
-                >
-                  <span className="font-semibold text-lg">{faq.question}</span>
-                  <span className={`transform transition-transform ${openFaq === index ? 'rotate-180' : ''}`}>
-                    ▼
-                  </span>
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-4 text-gray-400">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Learning Journey?</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-            Join our courses and get hands-on training from industry experts with placement support
-          </p>
-          <a href="#contact" className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Enroll Today
-          </a>
-        </div>
-      </section>
-    </div>
+    <main className="min-h-screen bg-black">
+      <CategoryHero category={categoryData} />
+      <ServiceShowcase 
+        services={services}
+        categoryName={categoryData.title}
+      />
+      <ProcessTimeline steps={process} />
+      <ComparisonTable 
+        services={pricingPlans}
+        features={comparisonFeatures}
+      />
+      <PricingSection plans={pricingPlans} />
+      <FAQAccordion 
+        faqs={faqs}
+        categoryName="Real Estate & Construction"
+      />
+      <TestimonialsPreview />
+      <LeadCaptureForm formType="quote" />
+      <FinalCTA />
+    </main>
   );
 }

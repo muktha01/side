@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased">
         <Header />
-        <main className="pt-20">
+        <main>
           {children}
         </main>
         <Footer />

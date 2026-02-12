@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, Quote, ArrowRight } from 'lucide-react';
+import { Star, Quote, ArrowRight, User, UserCircle, GraduationCap, Users as UsersIcon, ChefHat, Rocket as RocketIcon } from 'lucide-react';
 
 export default function TestimonialsPreview() {
   const testimonials = [
     {
       name: 'Rajesh Kumar',
       role: 'CEO, TechStart India',
-      image: '👨‍💼',
+      image: User,
       rating: 5,
       text: 'Sdev transformed our business with their custom CRM solution. The team is professional, responsive, and delivered beyond our expectations. Our sales have increased by 45% since implementation.',
       project: 'CRM Development'
@@ -16,7 +16,7 @@ export default function TestimonialsPreview() {
     {
       name: 'Priya Sharma',
       role: 'Marketing Head, Fashion Hub',
-      image: '👩‍💼',
+      image: UserCircle,
       rating: 5,
       text: 'Their digital marketing services are outstanding! Our social media engagement grew 300% in just 3 months. The WhatsApp bulk messaging tool has been a game-changer for customer communication.',
       project: 'Digital Marketing'
@@ -24,7 +24,7 @@ export default function TestimonialsPreview() {
     {
       name: 'Vikram Patel',
       role: 'Founder, EduTech Solutions',
-      image: '👨‍🎓',
+      image: GraduationCap,
       rating: 5,
       text: 'The training program was exceptional. I learned web development from scratch and now I am running my own development agency. The hands-on projects and placement support were invaluable.',
       project: 'Training Program'
@@ -32,7 +32,7 @@ export default function TestimonialsPreview() {
     {
       name: 'Anita Reddy',
       role: 'Owner, Retail Chain',
-      image: '👩‍💻',
+      image: UsersIcon,
       rating: 5,
       text: 'Got a business loan of ₹15 lakhs approved in just 48 hours! The process was smooth, transparent, and hassle-free. Highly recommend their financial services.',
       project: 'Business Loan'
@@ -40,7 +40,7 @@ export default function TestimonialsPreview() {
     {
       name: 'Suresh Iyer',
       role: 'Director, Cloud9 Cafe',
-      image: '👨‍🍳',
+      image: ChefHat,
       rating: 5,
       text: 'Their mobile app development team created a beautiful food ordering app for our restaurant. Orders increased by 60% and customer satisfaction is at an all-time high!',
       project: 'Mobile App Development'
@@ -48,7 +48,7 @@ export default function TestimonialsPreview() {
     {
       name: 'Neha Verma',
       role: 'Startup Founder',
-      image: '👩‍🚀',
+      image: RocketIcon,
       rating: 5,
       text: 'The HRM system has streamlined our entire HR operations. Payroll, attendance, leave management - everything is automated now. Saved us countless hours every month!',
       project: 'HRM System Implementation'
@@ -95,7 +95,9 @@ export default function TestimonialsPreview() {
               <Quote className="absolute top-4 right-4 md:top-6 md:right-6 w-6 h-6 md:w-8 md:h-8 text-cyan-500/20" />
               
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                <div className="text-3xl md:text-4xl">{testimonial.image}</div>
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full flex items-center justify-center">
+                  <testimonial.image className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
+                </div>
                 <div>
                   <h4 className="text-white font-bold text-sm md:text-base">{testimonial.name}</h4>
                   <p className="text-gray-400 text-xs md:text-sm">{testimonial.role}</p>

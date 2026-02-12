@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Mail, Phone, Clock, Briefcase, Wrench, Handshake, Check, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -83,25 +84,25 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: '📧',
+      icon: Mail,
       label: 'Email',
       value: 'contact@sdevolutions.com',
       copyable: true
     },
     {
-      icon: '📞',
+      icon: Phone,
       label: 'Phone',
       value: '+1 (555) 123-4567',
       copyable: true
     },
     {
-      icon: '📍',
+      icon: MapPin,
       label: 'Address',
       value: '123 Tech Street, Silicon Valley, CA 94000',
       copyable: false
     },
     {
-      icon: '⏰',
+      icon: Clock,
       label: 'Working Hours',
       value: 'Mon-Fri, 9AM-6PM PST',
       copyable: false
@@ -173,19 +174,19 @@ export default function ContactPage() {
   const departments = [
     {
       title: 'Sales Inquiries',
-      icon: '💼',
+      icon: Briefcase,
       email: 'sales@sdevolutions.com',
       description: 'New projects and business opportunities'
     },
     {
       title: 'Technical Support',
-      icon: '🛠️',
+      icon: Wrench,
       email: 'support@sdevolutions.com',
       description: 'Existing clients and technical assistance'
     },
     {
       title: 'Partnership Opportunities',
-      icon: '🤝',
+      icon: Handshake,
       email: 'partners@sdevolutions.com',
       description: 'Collaborations and strategic partnerships'
     }
@@ -570,9 +571,9 @@ export default function ContactPage() {
                     >
                       <motion.div
                         whileHover={{ scale: 1.2 }}
-                        className="text-3xl"
+                        className="p-2"
                       >
-                        {info.icon}
+                        <info.icon className="w-6 h-6 text-cyan-400" />
                       </motion.div>
                       <div className="flex-1">
                         <p className="text-sm text-gray-400 mb-1">{info.label}</p>
@@ -580,9 +581,16 @@ export default function ContactPage() {
                         {info.copyable && (
                           <button
                             onClick={() => copyToClipboard(info.value, info.label)}
-                            className="text-xs text-cyan-500 hover:text-cyan-400 mt-1 transition-colors"
+                            className="text-xs text-cyan-500 hover:text-cyan-400 mt-1 transition-colors flex items-center gap-1"
                           >
-                            {copiedField === info.label ? '✓ Copied!' : 'Click to copy'}
+                            {copiedField === info.label ? (
+                              <>
+                                <Check className="w-3 h-3" />
+                                <span>Copied!</span>
+                              </>
+                            ) : (
+                              'Click to copy'
+                            )}
                           </button>
                         )}
                       </div>
@@ -629,7 +637,7 @@ export default function ContactPage() {
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                   className="text-4xl mb-3 inline-block"
                 >
-                  ⏰
+                  <Clock className="w-10 h-10 mx-auto text-cyan-400" />
                 </motion.div>
                 <p className="text-sm text-gray-400">
                   We typically respond within
@@ -726,7 +734,10 @@ export default function ContactPage() {
                   whileHover={{ scale: 1.2, rotate: 10 }}
                   className="text-5xl mb-4 inline-block"
                 >
-                  {dept.icon}
+                  {dept.icon && React.createElement(dept.icon, { 
+                    className: "w-12 h-12 mx-auto text-cyan-400",
+                    strokeWidth: 1.5 
+                  })}
                 </motion.div>
                 <h3 className="text-xl font-bold mb-2">{dept.title}</h3>
                 <p className="text-gray-400 text-sm mb-4">{dept.description}</p>

@@ -1,345 +1,292 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const services = [
   {
     id: '01',
-    title: 'Software & App Development',
-    description:
-      'Comprehensive software solutions including mobile app development for Android, iOS, and hybrid platforms. From app designing and UI/UX to custom software development, we deliver end-to-end solutions tailored to your business needs.',
+    title: 'Website & App Development',
+    description: 'Build powerful web and mobile applications. From responsive websites to native iOS/Android apps and cross-platform solutions.',
     image: '/images/home/mobile.svg',
+    bgImage: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80',
+    gradient: 'from-cyan-500/20 via-blue-500/10 to-purple-500/5',
+    color: 'cyan',
+    size: 'large',
+    link: '/services/website-app-development',
   },
   {
     id: '02',
-    title: 'Website Solutions',
-    description:
-      'Professional web design and development services including static and dynamic websites, corporate and business sites, and full-featured e-commerce platforms. We create responsive, SEO-friendly websites that drive results.',
-    image: '/images/home/frontend.svg',
+    title: 'Digital Marketing',
+    description: 'Amplify your reach and maximize ROI with data-driven digital marketing strategies across all channels.',
+    image: '/images/home/data.svg',
+    bgImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    gradient: 'from-blue-500/20 via-indigo-500/10 to-violet-500/5',
+    color: 'blue',
+    size: 'large',
+    link: '/services/digital-marketing',
   },
   {
     id: '03',
-    title: 'Design & Creative Services',
-    description:
-      'Expert graphic design services including logo and branding design, social media creatives, and marketing and advertisement designs. We bring your brand vision to life with stunning visual content.',
-    image: '/images/home/uiux.svg',
+    title: 'AI Tools',
+    description: 'Harness artificial intelligence to transform data into intelligent insights that drive decision-making and innovation.',
+    image: '/images/home/ai.svg',
+    bgImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+    gradient: 'from-violet-500/20 via-purple-500/10 to-fuchsia-500/5',
+    color: 'violet',
+    size: 'medium',
+    link: '/services/ai',
   },
   {
     id: '04',
-    title: 'Business Automation Systems',
-    description:
-      'Streamline your operations with CRM, HRM, and ERP solutions. Our workflow and lead automation systems help you manage customer relationships, human resources, and enterprise processes efficiently.',
+    title: 'Recruitment & Staffing Solutions',
+    description: 'Find the perfect talent fast. Comprehensive recruitment services to build your dream team efficiently.',
     image: '/images/home/backend.svg',
+    bgImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80',
+    gradient: 'from-emerald-500/20 via-green-500/10 to-teal-500/5',
+    color: 'emerald',
+    size: 'medium',
+    link: '/services/recruitment-staffing',
   },
   {
     id: '05',
-    title: 'Communication & Marketing Tools',
-    description:
-      'Powerful marketing automation tools including WhatsApp bulk messaging, email marketing and bulk email sender, and SMS marketing solutions. Reach your audience effectively across multiple channels.',
-    image: '/images/home/mobile.svg',
+    title: 'Loans',
+    description: 'Quick approvals and trusted financial solutions. Get the funding you need with flexible loan options.',
+    image: '/images/home/data.svg',
+    bgImage: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80',
+    gradient: 'from-green-500/20 via-emerald-500/10 to-teal-500/5',
+    color: 'emerald',
+    size: 'medium',
+    link: '/services/loans',
   },
   {
     id: '06',
-    title: 'Digital Marketing Services',
-    description:
-      'Complete digital marketing solutions including social media marketing (SMM), paid advertising on Facebook, Instagram, LinkedIn & X, lead generation, brand growth, and online promotion strategies.',
-    image: '/images/home/uiux.svg',
+    title: 'Real Estate',
+    description: 'From property search to investment solutions. Navigate the real estate market with expert guidance.',
+    image: '/images/home/frontend.svg',
+    bgImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+    gradient: 'from-orange-500/20 via-amber-500/10 to-yellow-500/5',
+    color: 'orange',
+    size: 'medium',
+    link: '/services/real-estate',
   },
   {
     id: '07',
-    title: 'IT Training & Skill Development',
-    description:
-      'Industry-focused training programs in Java, Python, React, and full stack development. Learn with real-time projects, expert guidance, and hands-on experience to accelerate your tech career.',
-    image: '/images/home/frontend.svg',
+    title: 'Training',
+    description: 'Learn, grow, and succeed. Professional training programs to upskill your team and advance careers.',
+    image: '/images/home/uiux.svg',
+    bgImage: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80',
+    gradient: 'from-pink-500/20 via-rose-500/10 to-red-500/5',
+    color: 'pink',
+    size: 'medium',
+    link: '/services/training',
   },
   {
     id: '08',
-    title: 'Job Support & Career Services',
-    description:
-      'Comprehensive career support including job support (backend/backdoor support), interview support, professional resume preparation, and placement assistance to help you land your dream job.',
-    image: '/images/home/backend.svg',
-  },
-  {
-    id: '09',
-    title: 'Civil & Design Courses',
-    description:
-      'Professional training in planning and drafting, 3D design, interior design, and architectural visualization. Master the tools and techniques used by industry professionals.',
-    image: '/images/home/uiux.svg',
-  },
-  {
-    id: '10',
-    title: 'Artificial Intelligence',
-    description:
-      'We harness the power of AI to transform raw information into intelligent insights that drive decision-making. Through advanced systems built by experienced AI software developers, organizations gain the clarity and precision needed for long-term growth.',
-    image: '/images/home/ai.svg',
-  },
-  {
-    id: '11',
-    title: 'Managed Cloud & DevOps',
-    description:
-      'We specialize in optimizing your cloud infrastructure and streamlining operations through Managed Cloud and DevOps services. These efforts are supported by custom web software development practices that emphasize automation, uptime, and agility.',
+    title: 'Media Production',
+    description: 'Create stunning visual content that captivates. Video production, photography, and multimedia services.',
     image: '/images/home/cloud.svg',
-  },
-  {
-    id: '12',
-    title: 'Data Analysis & Data Science',
-    description:
-      'We excel at uncovering data narratives through visualizations, forecasting, and insights that support strategic choices. These techniques are often embedded in custom application development services where real-time data plays a pivotal role in decision-making.',
-    image: '/images/home/backend.svg',
+    bgImage: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
+    gradient: 'from-purple-500/20 via-indigo-500/10 to-blue-500/5',
+    color: 'purple',
+    size: 'medium',
+    link: '/services/media-production',
   },
 ];
 
-function ServiceVisual({ index, scrollProgress }) {
-  // Calculate if this service is active based on scroll
-  const isFirst = index === 0;
-  const isLast = index === services.length - 1;
-  const startProgress = index / services.length;
-  const endProgress = (index + 1) / services.length;
+function ServiceCard({ service, index }) {
+  const [isHovered, setIsHovered] = useState(false);
   
-  const opacity = useTransform(
-    scrollProgress,
-    [startProgress, startProgress + 0.05, endProgress - 0.05, endProgress],
-    isFirst ? [1, 1, 1, 0] : isLast ? [0, 1, 1, 1] : [0, 1, 1, 0]
-  );
-  
-  const scale = useTransform(
-    scrollProgress,
-    [startProgress, startProgress + 0.05, endProgress - 0.05, endProgress],
-    isFirst ? [1, 1, 1, 0.95] : isLast ? [0.95, 1, 1, 1] : [0.95, 1, 1, 0.95]
-  );
+  const colorClasses = {
+    cyan: 'from-cyan-500 to-blue-500',
+    purple: 'from-purple-500 to-pink-500',
+    pink: 'from-pink-500 to-rose-500',
+    emerald: 'from-emerald-500 to-teal-500',
+    blue: 'from-blue-500 to-indigo-500',
+    violet: 'from-violet-500 to-purple-500',
+    sky: 'from-sky-500 to-cyan-500',
+    orange: 'from-orange-500 to-amber-500',
+  };
+
+  const sizeClasses = {
+    large: 'md:col-span-2 md:row-span-1',
+    medium: 'md:col-span-1 md:row-span-1',
+  };
 
   return (
-    <motion.div
-      style={{ opacity, scale }}
-      className="absolute inset-0 flex items-center justify-center"
-    >
-      {/* Image container with glassmorphic background */}
-      <div className="relative w-full max-w-lg aspect-square">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-cyan-500/5 to-transparent rounded-3xl backdrop-blur-xl border border-white/5" />
-        
-        {/* Service Image */}
-        <div className="absolute inset-0 flex items-center justify-center p-12">
-          <div className="relative w-full h-full">
-            <Image
-              src={services[index].image}
-              alt={services[index].title}
-              fill
-              className="object-contain"
-              priority={index === 0}
-            />
+    <Link href={service.link} className="block h-full">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        className={`group relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 hover:border-white/20 backdrop-blur-xl ${sizeClasses[service.size]} cursor-pointer h-full min-h-[280px] md:min-h-[360px] transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10`}
+      >
+      {/* Background Image */}
+      {service.bgImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={service.bgImage}
+            alt={service.title}
+            fill
+            className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80" />
+        </div>
+      )}
+
+      {/* Gradient overlay on hover */}
+      <motion.div
+        className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+        initial={false}
+      />
+
+      {/* Animated border glow */}
+      <motion.div
+        className={`absolute -inset-[1px] rounded-2xl bg-gradient-to-r ${colorClasses[service.color]} opacity-0 blur-xl group-hover:opacity-30 transition-opacity duration-500`}
+        initial={false}
+      />
+
+      {/* Content */}
+      <div className="relative h-full p-4 md:p-8 flex flex-col">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-3 md:mb-5">
+          <div className="flex-1 pr-2">
+            <span className="text-[10px] md:text-xs font-mono text-white/50 mb-1 md:mb-2 block tracking-wider">{service.id}</span>
+            <h3 className="text-base md:text-2xl lg:text-3xl font-bold text-white leading-tight">
+              {service.title}
+            </h3>
           </div>
+          
+          {/* Icon */}
+          <motion.div
+            animate={{ rotate: isHovered ? 360 : 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="relative w-10 h-10 md:w-14 md:h-14 flex-shrink-0"
+          >
+            <div className={`absolute inset-0 bg-gradient-to-br ${colorClasses[service.color]} opacity-30 rounded-2xl blur-xl group-hover:opacity-50 transition-opacity`} />
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-contain p-2 drop-shadow-lg"
+            />
+          </motion.div>
         </div>
 
-        {/* Glow effect */}
-        <div className="absolute -inset-4 bg-primary/5 blur-3xl rounded-full opacity-50" />
-      </div>
-    </motion.div>
-  );
-}
-
-function ServiceContent({ service, index, scrollProgress }) {
-  const isFirst = index === 0;
-  const isLast = index === services.length - 1;
-  const startProgress = index / services.length;
-  const midProgress = (index + 0.5) / services.length;
-  const endProgress = (index + 1) / services.length;
-  
-  const opacity = useTransform(
-    scrollProgress,
-    [startProgress, startProgress + 0.05, endProgress - 0.05, endProgress],
-    isFirst ? [1, 1, 1, 0] : isLast ? [0, 1, 1, 1] : [0, 1, 1, 0]
-  );
-  
-  const x = useTransform(
-    scrollProgress,
-    [startProgress, startProgress + 0.05, endProgress - 0.05, endProgress],
-    isFirst ? [0, 0, 0, 30] : isLast ? [-30, 0, 0, 0] : [-30, 0, 0, 30]
-  );
-
-  return (
-    <motion.div
-      style={{ opacity, x }}
-      className="absolute inset-0 flex flex-col justify-center"
-    >
-      <div className="space-y-6">
-        {/* Index */}
-        <div className="text-7xl font-bold text-white/5">
-          {service.id}
-        </div>
-
-        {/* Title */}
-        <h3 className="text-4xl md:text-5xl font-bold text-white">
-          {service.title}
-        </h3>
+        {/* Decorative gradient bar */}
+        <div className={`h-0.5 md:h-1 w-12 md:w-16 rounded-full bg-gradient-to-r ${colorClasses[service.color]} mb-3 md:mb-5 opacity-70 group-hover:opacity-100 group-hover:w-20 md:group-hover:w-24 transition-all duration-500`} />
 
         {/* Description */}
-        <p className="text-lg text-gray-light leading-relaxed max-w-xl">
+        <p className="text-xs md:text-base text-gray-300 leading-relaxed mb-auto line-clamp-3 md:line-clamp-none">
           {service.description}
         </p>
 
         {/* CTA Button */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-[#0EA5E9] text-white font-semibold text-sm hover:bg-[#0284C7] transition-colors duration-200 shadow-lg shadow-[#0EA5E9]/20 inline-block"
-          style={{
-            paddingLeft: '1.5rem',
-            paddingRight: '1.5rem',
-            paddingTop: '0.5rem',
-            paddingBottom: '0.5rem',
-            borderRadius: '0.375rem',
-          }}
-        >
-          Know More
-        </motion.button>
+        <div className="mt-4 md:mt-6 pt-3 md:pt-5 border-t border-white/5">
+          <motion.div
+            animate={{ x: isHovered ? 5 : 0 }}
+            className="flex items-center gap-2 text-white/70 group-hover:text-cyan-400 transition-colors duration-300"
+          >
+            <span className="text-xs md:text-sm font-semibold">Explore Services</span>
+            <motion.svg 
+              className="w-5 h-5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+              animate={{ x: isHovered ? 3 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </motion.svg>
+          </motion.div>
+        </div>
       </div>
-    </motion.div>
-  );
-}
-
-function TimelineDot({ index, scrollProgress }) {
-  const startProgress = index / services.length;
-  const midProgress = (index + 0.5) / services.length;
-  const endProgress = (index + 1) / services.length;
-  
-  const scale = useTransform(
-    scrollProgress,
-    [startProgress, midProgress, endProgress],
-    [1, 1.8, 1]
-  );
-  
-  const backgroundColor = useTransform(
-    scrollProgress,
-    [startProgress, midProgress, endProgress],
-    ['rgba(255,255,255,0.2)', '#0EA5E9', 'rgba(255,255,255,0.2)']
-  );
-
-  return (
-    <motion.div
-      style={{ scale, backgroundColor }}
-      className="w-3 h-3 rounded-full"
-    />
+      </motion.div>
+    </Link>
   );
 }
 
 export default function Services() {
-  const containerRef = useRef(null);
-  
-  // Track scroll progress through the entire section
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end'],
-  });
-
   return (
-    <>
-      {/* Desktop/Tablet Version - Hidden on Mobile */}
-      <section
-        ref={containerRef}
-        id="services"
-        className="hidden md:block relative bg-black min-h-[350vh]"
-      >
-        {/* Sticky container that holds the layout */}
-        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
-          <div className="container-custom w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-[60px_1fr_1fr] gap-8 lg:gap-20 w-full items-center">
-              
-              {/* Timeline (far left) - hidden on mobile */}
-              <div className="hidden lg:flex relative items-center">
-                <div className="relative flex flex-col items-center h-[500px]">
-                  {/* Vertical line */}
-                  <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
-                  
-                  {/* Timeline dots */}
-                  <div className="relative flex flex-col justify-between h-full z-10">
-                    {services.map((service, index) => (
-                      <TimelineDot
-                        key={service.id}
-                        index={index}
-                        scrollProgress={scrollYProgress}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
+    <section className="relative bg-black py-12 md:py-24 overflow-hidden">
+      {/* Background gradient orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
 
-              {/* Left Content (sticky) */}
-              <div className="relative h-full flex items-center">
-                <div className="relative w-full h-96">
-                  {services.map((service, index) => (
-                    <ServiceContent
-                      key={service.id}
-                      service={service}
-                      index={index}
-                      scrollProgress={scrollYProgress}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Visual (sticky) - hidden on mobile */}
-              <div className="hidden lg:block relative h-full flex items-center">
-                <div className="relative w-full h-96">
-                  {services.map((service, index) => (
-                    <ServiceVisual
-                      key={service.id}
-                      index={index}
-                      scrollProgress={scrollYProgress}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mobile Version - Compact Cards */}
-      <section className="md:hidden relative bg-black py-12 px-4">
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-2">
-            Our <span className="gradient-text">Services</span>
+      <div className="container-custom relative z-10 px-3">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-6 md:mb-8"
+        >
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="inline-block px-3 py-1.5 text-xs md:text-sm font-semibold text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-3 md:mb-4"
+          >
+            What We Offer
+          </motion.span>
+          
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 px-2">
+            <span className="bg-gradient-to-r from-white via-cyan-100 to-blue-100 bg-clip-text text-transparent">
+              Comprehensive Solutions
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              for Your Business
+            </span>
           </h2>
-          <p className="text-gray-light text-sm">Comprehensive solutions for your business</p>
-        </div>
-        
-        <div className="grid grid-cols-2 gap-3">
+          
+          <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+            From ideation to execution, we deliver cutting-edge digital solutions that transform businesses and drive growth.
+          </p>
+        </motion.div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-xl p-3 border border-white/10"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="flex-shrink-0 w-10 h-10 relative mb-2">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-bold text-white leading-tight mb-1">{service.title}</h3>
-                  <p className="text-xs text-gray-light leading-relaxed line-clamp-3 mb-2">{service.description}</p>
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-                  >
-                    Learn More →
-                  </motion.button>
-                </div>
-              </div>
-            </motion.div>
+            <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
-      </section>
-    </>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-8 md:mt-12"
+        >
+          <Link href="/services">
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(6, 182, 212, 0.4)' }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                View All Services
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  →
+                </motion.span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.button>
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 }

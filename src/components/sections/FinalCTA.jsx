@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageCircle, Phone, Mail, ArrowRight } from 'lucide-react';
+import { MessageCircle, Phone, Mail, ArrowRight, Rocket, Zap, Target } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
@@ -27,7 +27,9 @@ export default function FinalCTA() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full border border-cyan-500/50"
           >
-            <span className="text-cyan-300 font-semibold">🚀 Let's Build Something Amazing</span>
+            <span className="text-cyan-300 font-semibold flex items-center gap-2 justify-center">
+              <Rocket className="w-4 h-4" /> Let's Build Something Amazing
+            </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -124,11 +126,11 @@ export default function FinalCTA() {
               <span>Available Now</span>
             </div>
             <div className="hidden sm:block w-px h-6 bg-white/20"></div>
-            <span>⚡ Fast Response Time</span>
+            <span className="flex items-center gap-2"><Zap className="w-4 h-4" /> Fast Response Time</span>
             <div className="hidden sm:block w-px h-6 bg-white/20"></div>
-            <span>💯 Free Consultation</span>
+            <span className="flex items-center gap-2"><Target className="w-4 h-4" /> Free Consultation</span>
             <div className="hidden sm:block w-px h-6 bg-white/20"></div>
-            <span>🎯 5+ Years Experience</span>
+            <span className="flex items-center gap-2"><Target className="w-4 h-4" /> 5+ Years Experience</span>
           </motion.div>
         </motion.div>
       </div>

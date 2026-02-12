@@ -5,7 +5,7 @@ import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-3 sm:px-6">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Orbs */}
@@ -13,13 +13,13 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.3, scale: 1 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
-          className="absolute top-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-primary/30 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-32 h-32 md:w-96 md:h-96 bg-primary/30 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.2, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.3, ease: 'easeOut' }}
-          className="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-32 h-32 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"
         />
         
         {/* Floating geometric shapes */}
@@ -49,7 +49,7 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.h1
             variants={staggerItem}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 px-2"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-3 md:mb-6 px-1"
           >
             <span className="text-white">Software Development Company for</span>
             <br />
@@ -59,8 +59,8 @@ export default function Hero() {
           {/* Subheadline */}
           <motion.p
             variants={staggerItem}
-            className="text-base sm:text-lg md:text-xl text-gray-light mb-6 md:mb-8 leading-relaxed px-4"
-            style={{ textAlign: 'center', width: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: '1rem', maxWidth: '90%' }}
+            className="text-sm sm:text-lg md:text-xl text-gray-light mb-5 md:mb-8 leading-relaxed px-2"
+            style={{ textAlign: 'center', width: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: '0.5rem', maxWidth: '95%' }}
           >
             From Vision To Execution, Accelerated With SDEV Solutions
           </motion.p>
@@ -86,7 +86,7 @@ export default function Hero() {
           {/* Stats Section */}
           <motion.div
             variants={staggerItem}
-            className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto px-4"
+            className="mt-8 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 max-w-4xl mx-auto px-2"
           >
             {[
               { number: '11+', label: 'Years' },
@@ -99,12 +99,12 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                className="text-center"
+                className="text-center py-3 md:py-0"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 md:mb-2">
+                <div className="text-xl sm:text-3xl md:text-4xl font-bold text-primary mb-0.5 md:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-light">
+                <div className="text-[10px] sm:text-sm md:text-base text-gray-light">
                   {stat.label}
                 </div>
               </motion.div>

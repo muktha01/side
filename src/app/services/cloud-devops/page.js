@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import React from 'react';
+import { Cloud, Shield, GitBranch, Settings, Monitor, RefreshCw, Star, Wrench, Globe, Rocket } from 'lucide-react';
 
 export default function CloudDevOpsPage() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -11,6 +13,14 @@ export default function CloudDevOpsPage() {
     service: '',
     message: ''
   });
+
+  // Icon wrapper component
+  const IconWrapper = ({ icon: Icon, className = "w-10 h-10 mx-auto text-cyan-400" }) => {
+    if (typeof Icon === 'string') {
+      return <div className="text-4xl">{Icon}</div>;
+    }
+    return <Icon className={className} strokeWidth={1.5} />;
+  };
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -31,21 +41,21 @@ export default function CloudDevOpsPage() {
 
   const stats = [
     { value: '60%', label: 'Operation Costs Reduced' },
-    { value: '⭐', label: '5-Star Rated DevOps Services', isIcon: true },
+    { value: '5-Star', label: '5-Star Rated DevOps Services' },
     { value: '75%', label: 'Production Deployment Speed' }
   ];
 
   const tools = [
     { name: 'Docker', icon: '🐳' },
     { name: 'Kubernetes', icon: '☸️' },
-    { name: 'Jenkins', icon: '🔧' },
+    { name: 'Jenkins', icon: Wrench },
     { name: 'Git/GitHub', icon: '📦' },
     { name: 'Terraform', icon: '🏗️' },
-    { name: 'Ansible', icon: '⚙️' },
+    { name: 'Ansible', icon: Settings },
     { name: 'AWS', icon: '☁️' },
     { name: 'Azure', icon: '🔷' },
-    { name: 'Google Cloud', icon: '🌐' },
-    { name: 'GitLab CI/CD', icon: '🚀' }
+    { name: 'Google Cloud', icon: Globe },
+    { name: 'GitLab CI/CD', icon: Rocket }
   ];
 
   const processes = [
@@ -58,7 +68,7 @@ export default function CloudDevOpsPage() {
         'Multi-cloud and hybrid cloud solutions',
         'Cost optimization and resource management'
       ],
-      icon: '🖥️'
+      icon: Monitor
     },
     {
       title: 'Continuous Integration and Deployment (CI/CD)',
@@ -69,7 +79,7 @@ export default function CloudDevOpsPage() {
         'Version control and collaboration tools',
         'Rollback and deployment strategies'
       ],
-      icon: '🔄'
+      icon: RefreshCw
     },
     {
       title: 'Security, Monitoring, and Governance Management',
@@ -80,7 +90,7 @@ export default function CloudDevOpsPage() {
         'Log management and analysis',
         'Disaster recovery and backup strategies'
       ],
-      icon: '🔒'
+      icon: Shield
     }
   ];
 
@@ -251,8 +261,8 @@ export default function CloudDevOpsPage() {
                   key={index}
                   className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:border-cyan-500/50 hover:bg-gray-800/50 transition-all duration-300 group"
                 >
-                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-                    {tool.icon}
+                  <div className="mb-3 group-hover:scale-110 transition-transform">
+                    <IconWrapper icon={tool.icon} />
                   </div>
                   <div className="text-sm font-medium text-gray-300">
                     {tool.name}
@@ -268,8 +278,8 @@ export default function CloudDevOpsPage() {
                   key={index}
                   className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:border-cyan-500/50 hover:bg-gray-800/50 transition-all duration-300 group w-40"
                 >
-                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-                    {tool.icon}
+                  <div className="mb-3 group-hover:scale-110 transition-transform">
+                    <IconWrapper icon={tool.icon} />
                   </div>
                   <div className="text-sm font-medium text-gray-300">
                     {tool.name}
@@ -369,8 +379,8 @@ export default function CloudDevOpsPage() {
                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                   <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-gray-700 p-12 h-80 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-8xl mb-4">
-                        {process.icon}
+                      <div className="mb-4 flex justify-center">
+                        <IconWrapper icon={process.icon} className="w-24 h-24 text-cyan-400" />
                       </div>
                       <div className="text-gray-500 text-sm max-w-xs">
                         {process.title.split(' ').slice(0, 3).join(' ')}

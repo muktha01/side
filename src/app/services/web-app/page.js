@@ -504,9 +504,9 @@ export default function WebAppDevelopmentPage() {
                   </div>
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-cyan-500 font-semibold">{service.pricing}</span>
-                    <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300">
+                    <a href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 inline-block">
                       Learn More
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

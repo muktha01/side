@@ -235,7 +235,7 @@ export default function MobileAppDevelopmentPage() {
                 </div>
               </div>
 
-              <a href="#" className="text-primary hover:text-primary-light flex items-center gap-2 group">
+              <a href="/contact" className="text-primary hover:text-primary-light flex items-center gap-2 group">
                 Learn More 
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -281,7 +281,7 @@ export default function MobileAppDevelopmentPage() {
                 </div>
               </div>
 
-              <a href="#" className="text-primary hover:text-primary-light flex items-center gap-2 group">
+              <a href="/contact" className="text-primary hover:text-primary-light flex items-center gap-2 group">
                 Learn More 
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

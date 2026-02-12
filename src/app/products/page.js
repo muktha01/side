@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, animate, AnimatePresence } from 'framer-motion';
 import Header from '@/components/sections/Header';
-import Footer from '@/components/sections/Footer';
 import Link from 'next/link';
+import { Users, Briefcase, MessageCircle, Search, Mail, Clock, BarChart3, DollarSign, Handshake, Check, Star, Gift, X } from 'lucide-react';
 
 export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -58,7 +58,7 @@ export default function ProductsPage() {
       name: 'HRM System',
       tagline: 'Complete Human Resource Management',
       description: 'Streamline your HR operations with our all-in-one solution for employee management, payroll, and performance tracking.',
-      icon: '👥',
+      icon: Users,
       gradient: 'from-[#8B5CF6] to-[#EC4899]',
       category: 'HR',
       features: [
@@ -76,7 +76,7 @@ export default function ProductsPage() {
       name: 'CRM Platform',
       tagline: 'Supercharge Your Sales Pipeline',
       description: 'Manage leads, track deals, and grow your business with intelligent customer relationship management.',
-      icon: '💼',
+      icon: Briefcase,
       gradient: 'from-[#0EA5E9] to-[#06B6D4]',
       category: 'Sales',
       features: [
@@ -94,7 +94,7 @@ export default function ProductsPage() {
       name: 'WhatsApp Bulk Messaging',
       tagline: 'Reach Thousands Instantly',
       description: 'Send personalized bulk messages, automate campaigns, and engage customers directly on WhatsApp.',
-      icon: '💬',
+      icon: MessageCircle,
       gradient: 'from-[#10B981] to-[#059669]',
       category: 'Marketing',
       features: [
@@ -112,7 +112,7 @@ export default function ProductsPage() {
       name: 'Google Data Extractor',
       tagline: 'Mine Business Intelligence',
       description: 'Extract valuable business data from Google Maps, Search, and reviews for lead generation and market research.',
-      icon: '🔍',
+      icon: Search,
       gradient: 'from-[#F59E0B] to-[#EF4444]',
       category: 'Data',
       features: [
@@ -130,7 +130,7 @@ export default function ProductsPage() {
       name: 'Email Bulk Messaging',
       tagline: 'Professional Email Campaigns',
       description: 'Create, send, and track professional email campaigns with our easy-to-use bulk email marketing solution.',
-      icon: '📧',
+      icon: Mail,
       gradient: 'from-[#3B82F6] to-[#8B5CF6]',
       category: 'Marketing',
       features: [
@@ -157,25 +157,25 @@ export default function ProductsPage() {
 
   const problems = [
     {
-      icon: '⏰',
+      icon: Clock,
       title: 'Wasting Time on Manual Tasks',
       description: 'Stop spending hours on repetitive work',
       stat: '40hrs/week saved'
     },
     {
-      icon: '📊',
+      icon: BarChart3,
       title: 'Missing Important Insights',
       description: 'Get real-time data to make better decisions',
       stat: '10x better insights'
     },
     {
-      icon: '💸',
+      icon: DollarSign,
       title: 'Losing Money to Inefficiency',
       description: 'Reduce operational costs significantly',
       stat: '60% cost reduction'
     },
     {
-      icon: '🤝',
+      icon: Handshake,
       title: 'Poor Customer Experience',
       description: 'Deliver exceptional service every time',
       stat: '95% satisfaction'
@@ -222,7 +222,10 @@ export default function ProductsPage() {
                 ease: "easeInOut"
               }}
             >
-              {product.icon}
+              {product.icon && React.createElement(product.icon, { 
+                className: "w-16 h-16 text-cyan-400",
+                strokeWidth: 1.5 
+              })}
             </motion.div>
           ))}
         </div>
@@ -303,19 +306,19 @@ export default function ProductsPage() {
               className="flex flex-wrap justify-center gap-6 text-sm text-white/60"
             >
               <div className="flex items-center gap-2">
-                <span className="text-green-400">✓</span>
+                <Check className="w-4 h-4 text-green-400" />
                 <span>No credit card required</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-green-400">✓</span>
+                <Check className="w-4 h-4 text-green-400" />
                 <span>14-day free trial</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-green-400">✓</span>
+                <Check className="w-4 h-4 text-green-400" />
                 <span>Cancel anytime</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-yellow-400">⭐</span>
+                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                 <span>4.8/5 rating (200+ reviews)</span>
               </div>
             </motion.div>
@@ -464,8 +467,8 @@ export default function ProductsPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-red-500/50 transition-all duration-300">
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {problem.icon}
+                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <problem.icon className="w-12 h-12 text-red-400" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">{problem.title}</h3>
                   <p className="text-white/60 text-sm mb-4">{problem.description}</p>
@@ -626,7 +629,12 @@ export default function ProductsPage() {
                 <div className={`bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-lg border ${
                   product.popular ? 'border-[#0EA5E9]/50' : 'border-white/10'
                 } rounded-2xl p-8 hover:border-[#0EA5E9]/50 transition-all duration-300`}>
-                  <div className={`text-5xl mb-4`}>{product.icon}</div>
+                  <div className={`text-5xl mb-4`}>
+                    {product.icon && React.createElement(product.icon, { 
+                      className: "w-12 h-12 text-cyan-400",
+                      strokeWidth: 1.5 
+                    })}
+                  </div>
                   <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
                   <p className="text-white/60 text-sm mb-6">{product.tagline}</p>
                   
@@ -652,7 +660,7 @@ export default function ProductsPage() {
                   <ul className="space-y-3 mb-8">
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                        <span className="text-green-400 mt-0.5">✓</span>
+                        <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -706,11 +714,13 @@ export default function ProductsPage() {
                 onClick={() => setShowExitIntent(false)}
                 className="absolute top-4 right-4 text-white/60 hover:text-white"
               >
-                ✕
+                <X className="w-5 h-5" />
               </button>
               
               <div className="text-center">
-                <div className="text-6xl mb-4">🎁</div>
+                <div className="mb-4 flex justify-center">
+                  <Gift className="w-16 h-16 text-[#0EA5E9]" />
+                </div>
                 <h3 className="text-3xl font-bold mb-4">Wait! Don't Leave Yet</h3>
                 <p className="text-white/70 mb-6">
                   Get <span className="text-[#0EA5E9] font-bold">20% off</span> your first month when you start your free trial today
@@ -731,8 +741,6 @@ export default function ProductsPage() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <Footer />
     </div>
   );
 }
@@ -794,9 +802,11 @@ function ProductCard({ product, index, pricingToggle }) {
         <motion.div
           animate={{ rotate: isHovered ? [0, -10, 10, 0] : 0 }}
           transition={{ duration: 0.5 }}
-          className="text-6xl mb-4"
+          className="mb-4"
         >
-          {product.icon}
+          <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${product.gradient} p-3 flex items-center justify-center`}>
+            <product.icon className="w-full h-full text-white" strokeWidth={1.5} />
+          </div>
         </motion.div>
 
         <div className={`inline-block px-3 py-1 bg-gradient-to-r ${product.gradient} bg-opacity-20 rounded-full text-xs font-medium mb-4 self-start`}>
@@ -819,7 +829,7 @@ function ProductCard({ product, index, pricingToggle }) {
               transition={{ delay: i * 0.1 }}
               className="flex items-start gap-2 text-sm text-white/70"
             >
-              <span className="text-green-400 mt-0.5">✓</span>
+              <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
               <span>{feature}</span>
             </motion.div>
           ))}

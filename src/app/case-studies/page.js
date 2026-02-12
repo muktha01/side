@@ -1,18 +1,25 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
+import { Rocket, Star, Building2, DollarSign, Monitor, TrendingUp, Code, Flame, BarChart3, ShoppingCart } from 'lucide-react';
 
 export default function CaseStudiesPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedCase, setSelectedCase] = useState(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
+  // Icon wrapper to handle rendering
+  const IconWrapper = ({ icon: Icon, className = "w-12 h-12 mx-auto text-cyan-400" }) => {
+    if (!Icon) return null;
+    return <Icon className={className} strokeWidth={1.5} />;
+  };
+
   const stats = [
-    { value: 500, label: 'Projects Delivered', icon: '🚀', suffix: '+' },
-    { value: 98, label: 'Client Satisfaction', icon: '⭐', suffix: '%' },
-    { value: 50, label: 'Industries Served', icon: '🏢', suffix: '+' },
-    { value: 800, label: 'Revenue Generated for Clients', icon: '💰', prefix: '₹', suffix: 'Cr+' }
+    { value: 500, label: 'Projects Delivered', icon: Rocket, suffix: '+' },
+    { value: 98, label: 'Client Satisfaction', icon: Star, suffix: '%' },
+    { value: 50, label: 'Industries Served', icon: Building2, suffix: '+' },
+    { value: 800, label: 'Revenue Generated for Clients', icon: DollarSign, prefix: '₹', suffix: 'Cr+' }
   ];
 
   const filters = ['All', 'Web Apps', 'Mobile Apps', 'AI/ML', 'E-commerce', 'Healthcare', 'Finance', 'SaaS'];
@@ -240,16 +247,16 @@ export default function CaseStudiesPage() {
   ];
 
   const industries = [
-    { name: 'Finance', icon: '💰', count: 45 },
+    { name: 'Finance', icon: DollarSign, count: 45 },
     { name: 'Healthcare', icon: '🏥', count: 38 },
-    { name: 'E-commerce', icon: '🛒', count: 52 },
+    { name: 'E-commerce', icon: ShoppingCart, count: 52 },
     { name: 'Education', icon: '📚', count: 28 },
-    { name: 'Real Estate', icon: '🏢', count: 22 },
+    { name: 'Real Estate', icon: Building2, count: 22 },
     { name: 'Manufacturing', icon: '🏭', count: 31 },
     { name: 'Logistics', icon: '🚚', count: 19 },
     { name: 'Food Tech', icon: '🍔', count: 25 },
-    { name: 'SaaS', icon: '💻', count: 67 },
-    { name: 'Marketing', icon: '📈', count: 34 },
+    { name: 'SaaS', icon: Monitor, count: 67 },
+    { name: 'Marketing', icon: TrendingUp, count: 34 },
     { name: 'Travel', icon: '✈️', count: 18 },
     { name: 'Entertainment', icon: '🎬', count: 21 }
   ];
@@ -257,15 +264,15 @@ export default function CaseStudiesPage() {
   const technologies = [
     { name: 'React', icon: '⚛️' },
     { name: 'Node.js', icon: '🟢' },
-    { name: 'Python', icon: '🐍' },
+    { name: 'Python', icon: Code },
     { name: 'AWS', icon: '☁️' },
     { name: 'TensorFlow', icon: '🧠' },
     { name: 'Flutter', icon: '💙' },
     { name: 'MongoDB', icon: '🍃' },
     { name: 'Docker', icon: '🐳' },
     { name: 'Kubernetes', icon: '☸️' },
-    { name: 'Firebase', icon: '🔥' },
-    { name: 'GraphQL', icon: '📊' },
+    { name: 'Firebase', icon: Flame },
+    { name: 'GraphQL', icon: BarChart3 },
     { name: 'TypeScript', icon: '📘' }
   ];
 
@@ -400,7 +407,7 @@ export default function CaseStudiesPage() {
                   transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
                   className="text-5xl mb-4"
                 >
-                  {stat.icon}
+                  {typeof stat.icon === 'string' ? stat.icon : <IconWrapper icon={stat.icon} />}
                 </motion.div>
                 <h3 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
                   <CountUpAnimation value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
@@ -669,7 +676,7 @@ export default function CaseStudiesPage() {
                   transition={{ duration: 0.5 }}
                   className="text-5xl mb-3"
                 >
-                  {industry.icon}
+                  {typeof industry.icon === 'string' ? industry.icon : <IconWrapper icon={industry.icon} />}
                 </motion.div>
                 <h3 className="font-semibold mb-1">{industry.name}</h3>
                 <p className="text-sm text-gray-400">{industry.count} projects</p>
@@ -716,7 +723,7 @@ export default function CaseStudiesPage() {
                   }}
                   className="text-5xl mb-2"
                 >
-                  {tech.icon}
+                  {typeof tech.icon === 'string' ? tech.icon : <IconWrapper icon={tech.icon} />}
                 </motion.div>
                 <p className="text-sm font-semibold">{tech.name}</p>
               </motion.div>

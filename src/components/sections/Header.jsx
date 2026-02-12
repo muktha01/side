@@ -9,6 +9,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [closeTimeout, setCloseTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,27 +19,40 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle dropdown open with instant show
+  const handleDropdownEnter = (itemName) => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+    setOpenDropdown(itemName);
+  };
+
+  // Handle dropdown close with delay
+  const handleDropdownLeave = () => {
+    const timeout = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 200);
+    setCloseTimeout(timeout);
+  };
+
+  const serviceCategories = [
+    { name: 'Website & App Development', href: '/services/website-app-development' },
+    { name: 'Digital Marketing', href: '/services/digital-marketing' },
+    { name: 'AI Tools', href: '/services/ai-tools' },
+    { name: 'Recruitment & Staffing Solutions', href: '/services/recruitment-staffing' },
+    { name: 'Loans', href: '/services/loans' },
+    { name: 'Real Estate', href: '/services/real-estate' },
+    { name: 'Training', href: '/services/training' },
+    { name: 'Media Production', href: '/services/media-production' },
+  ];
+
   const menuItems = [
     { 
       name: 'Services', 
-      href: '#services', 
+      href: '/services',
       hasDropdown: true,
-      dropdownItems: [
-        { name: 'Software & App Development', href: '/services/software-app-development' },
-        { name: 'Website Solutions', href: '/services/website-solutions' },
-        { name: 'UI/UX Design', href: '/services/uiux-design' },
-        { name: 'Mobile App Development', href: '/services/mobile-app' },
-        { name: 'Web App Development', href: '/services/web-app' },
-        { name: 'Design & Creative Services', href: '/services/design-creative' },
-        { name: 'Business Automation Systems', href: '/services/business-automation' },
-        { name: 'Communication & Marketing Tools', href: '/services/communication-marketing' },
-        { name: 'Artificial Intelligence (AI)', href: '/services/ai' },
-        { name: 'Digital Marketing', href: '/services/digital-marketing' },
-        { name: 'Training Institute', href: '/services/training-institute' },
-        { name: 'Job Support & Career Services', href: '/services/job-support-career' },
-        { name: 'Civil & Design Courses', href: '/services/civil-design-courses' },
-        { name: 'Loans', href: '/services/loans' },
-      ]
+      dropdownItems: serviceCategories
     },
     { name: 'Products', href: '/products' },
     { name: 'About Us', href: '/about' },
@@ -78,52 +92,67 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
-              <div key={item.name} className="relative group">
+              <div 
+                key={item.name}
+                className="relative group"
+                onMouseEnter={() => item.hasDropdown && handleDropdownEnter(item.name)}
+                onMouseLeave={() => item.hasDropdown && handleDropdownLeave()}
+              >
                 <Link
                   href={item.href}
-                  className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1 whitespace-nowrap py-2"
+                  className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium whitespace-nowrap py-2 flex items-center gap-1"
                 >
                   {item.name}
                   {item.hasDropdown && (
-                    <svg
-                      className="w-4 h-4 opacity-60 transition-transform group-hover:rotate-180"
-                      fill="none"
-                      stroke="currentColor"
+                    <svg 
+                      className={`w-4 h-4 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      stroke="currentColor" 
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   )}
                 </Link>
-                
+
                 {/* Dropdown Menu */}
-                {item.hasDropdown && item.dropdownItems && (
-                  <div className="absolute left-0 top-full pt-3 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                    <div className="bg-gradient-to-br from-black/98 to-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden w-[600px]">
-                      <div className="grid grid-cols-2 gap-1 py-4 px-3">
+                {item.hasDropdown && openDropdown === item.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 pt-2 z-50"
+                    onMouseEnter={() => handleDropdownEnter(item.name)}
+                    onMouseLeave={() => handleDropdownLeave()}
+                  >
+                    <div className="w-72 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-cyan-500/10 overflow-hidden">
+                      <div className="p-2">
                         {item.dropdownItems.map((dropdownItem, index) => (
                           <Link
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="group/item relative px-5 py-4 text-white/70 hover:text-white transition-all duration-300 rounded-xl hover:bg-gradient-to-r hover:from-[#0EA5E9]/20 hover:via-[#0EA5E9]/10 hover:to-transparent border border-transparent hover:border-[#0EA5E9]/30 hover:shadow-lg hover:shadow-[#0EA5E9]/20 text-left overflow-hidden"
+                            className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-transparent rounded-xl transition-all duration-200 border border-transparent hover:border-cyan-500/20"
+                            onClick={() => setOpenDropdown(null)}
                           >
-                            {/* Animated background effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#0EA5E9]/0 via-[#0EA5E9]/5 to-[#0EA5E9]/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 -translate-x-full group-hover/item:translate-x-full transform" style={{ transitionDuration: '600ms' }}></div>
-                            
-                            {/* Left accent bar */}
-                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-gradient-to-b from-[#0EA5E9] to-[#06B6D4] opacity-0 group-hover/item:opacity-100 group-hover/item:h-3/4 transition-all duration-300 rounded-r-full"></div>
-                            
-                            <span className="relative text-sm font-medium block group-hover/item:translate-x-1 transition-transform duration-300">{dropdownItem.name}</span>
+                            <div className="flex items-center gap-3">
+                              <div className="w-1.5 h-1.5 rounded-full bg-cyan-500/50" />
+                              <span>{dropdownItem.name}</span>
+                            </div>
                           </Link>
                         ))}
                       </div>
+                      <div className="px-4 py-3 border-t border-white/10 bg-white/5">
+                        <Link
+                          href="/services"
+                          className="block text-sm text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          View All Services →
+                        </Link>
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             ))}

@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Check, Trophy } from 'lucide-react';
 
 const certifications = [
-  { name: 'Globally Certified Professionals', logo: '✓' },
+  { name: 'Globally Certified Professionals', logo: Check },
   { name: 'ISO 27001:2022 Information Security Management System', logo: 'ISO' },
   { name: 'ISO 9001:2015 Quality Management System', logo: 'ISO' },
   { name: 'GDPR Compliance', logo: 'GDPR' },
@@ -50,7 +51,7 @@ export default function Awards() {
                 className="bg-dark-800 rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[140px]"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 text-primary font-bold text-lg">
-                  {cert.logo}
+                  {typeof cert.logo === 'string' ? cert.logo : <cert.logo className="w-6 h-6" />}
                 </div>
                 <p className="text-sm text-gray-light">{cert.name}</p>
               </motion.div>
@@ -78,7 +79,7 @@ export default function Awards() {
                 className="bg-dark-800 rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[140px]"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-cyan-500/20 rounded-lg flex items-center justify-center mb-3">
-                  <span className="text-2xl">🏆</span>
+                  <Trophy className="w-8 h-8 text-primary" />
                 </div>
                 <p className="text-xs text-gray-light font-medium">{award.name}</p>
               </motion.div>

@@ -48,34 +48,34 @@ export default function ProductsOverview() {
   ];
 
   return (
-    <section className="py-12 md:py-20 relative overflow-hidden">
+    <section className="py-10 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-3 md:px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <div className="inline-block mb-4 md:mb-6 px-4 md:px-6 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
-            <span className="text-cyan-400 font-semibold text-sm md:text-base">Our Products</span>
+          <div className="inline-block mb-3 md:mb-6 px-3 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
+            <span className="text-cyan-400 font-semibold text-xs md:text-base">Our Products</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 px-4">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-6 px-2">
             Ready-to-Use Digital{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Products
             </span>
           </h2>
 
-          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
+          <p className="text-sm md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             Powerful SaaS solutions designed to streamline your business operations
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 mb-6 md:mb-12">
           {products.map((product, index) => (
             <motion.div
               key={index}

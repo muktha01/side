@@ -8,7 +8,6 @@ import TestimonialsPreview from '@/components/sections/TestimonialsPreview';
 import CaseStudy from '@/components/sections/CaseStudy';
 import WorldwidePresence from '@/components/sections/WorldwidePresence';
 import Blog from '@/components/sections/Blog';
-import Footer from '@/components/sections/Footer';
 
 export const metadata = {
   title: "SDEV Solutions - Leading Software Development Company | Custom Web & Mobile App Development",
@@ -68,7 +67,6 @@ export default function Home() {
       {/* <CaseStudy /> */}
       {/* <WorldwidePresence /> */}
       <Blog />
-      <Footer />
     </div>
   );
 }
