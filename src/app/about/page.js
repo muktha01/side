@@ -113,13 +113,6 @@ const FloatingParticles = () => {
 };
 
 export default function AboutPage() {
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start']
-  });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -141,54 +134,50 @@ export default function AboutPage() {
   };
 
   const stats = [
-    { number: 5, suffix: '+', label: 'Years Experience', icon: ClockIcon },
-    { number: 200, suffix: '+', label: 'Projects Delivered', icon: CheckBadgeIcon },
-    { number: 150, suffix: '+', label: 'Happy Clients', icon: HeartIcon },
-    { number: 25, suffix: '+', label: 'Team Members', icon: UserGroupIcon },
+    { number: 4, suffix: '+', label: 'Android Apps on Play Store', icon: ClockIcon },
+    { number: 8, suffix: '+', label: 'Business Websites Delivered', icon: CheckBadgeIcon },
+    { number: 3, suffix: '+', label: 'E-Commerce Stores Built', icon: HeartIcon },
+    { number: 100, suffix: '%', label: 'Lifetime Support', icon: UserGroupIcon },
   ];
 
   const values = [
     {
-      icon: LightBulbIcon,
-      title: 'Innovation',
-      description: 'Embracing cutting-edge technologies to deliver next-generation solutions',
-    },
-    {
       icon: ShieldCheckIcon,
-      title: 'Quality',
-      description: 'Delivering excellence in every project with meticulous attention to detail',
+      title: 'Transparency',
+      description: 'Honest timelines, clear communication and no hidden surprises — you always know where your project stands',
     },
     {
-      icon: UserGroupIcon,
-      title: 'Collaboration',
-      description: 'Working closely with our clients as true partners in success',
+      icon: HeartIcon,
+      title: 'Long-Term Relationships',
+      description: 'We don\'t just deliver projects. We build lasting partnerships focused on your sustained growth',
+    },
+    {
+      icon: CurrencyDollarIcon,
+      title: 'Affordable Excellence',
+      description: 'Premium quality solutions at pricing well below market standards — portfolio valued ₹15L–₹25L in market rates',
     },
     {
       icon: CheckBadgeIcon,
-      title: 'Integrity',
-      description: 'Transparent and honest communication in everything we do',
+      title: 'Proven Portfolio',
+      description: '4+ Android apps on Play Store, 8+ business websites and 3+ e-commerce stores across real industries',
     },
     {
-      icon: ChartBarIcon,
-      title: 'Growth',
-      description: 'Continuous learning and improvement to stay ahead of the curve',
+      icon: UserGroupIcon,
+      title: 'Conversion-Focused Design',
+      description: 'Every website and app is built to enhance brand visibility, generate leads and increase revenue',
     },
     {
       icon: SparklesIcon,
-      title: 'Impact',
-      description: 'Creating solutions that make a meaningful difference',
+      title: 'End-to-End Solutions',
+      description: 'Website + E-Commerce + App + Performance Marketing — all under one roof for complete digital growth',
     },
   ];
 
   const team = [
-    { name: 'John Anderson', title: 'CEO & Founder', img: 1 },
-    { name: 'Sarah Chen', title: 'Chief Technology Officer', img: 2 },
-    { name: 'Michael Roberts', title: 'Head of Design', img: 3 },
-    { name: 'Emily Taylor', title: 'Head of Engineering', img: 4 },
-    { name: 'David Kumar', title: 'Head of AI & ML', img: 5 },
-    { name: 'Jessica Martinez', title: 'Head of Sales', img: 6 },
-    { name: 'Alex Johnson', title: 'Head of Operations', img: 7 },
-    { name: 'Lisa Wang', title: 'Head of Product', img: 8 },
+    { name: 'Muktha', title: 'Founder & CEO', img: 1 },
+    { name: 'Development Team', title: 'Android & Web Development', img: 2 },
+    { name: 'Design Team', title: 'UI/UX & Creative', img: 3 },
+    { name: 'Marketing Team', title: 'SMM, SEO & Content', img: 4 },
   ];
 
   const culture = [
@@ -225,44 +214,44 @@ export default function AboutPage() {
   ];
 
   const milestones = [
-    { year: 2020, title: 'Company Founded', description: 'Started with a vision to transform digital experiences', icon: RocketLaunchIcon },
-    { year: 2021, title: 'First 20 Clients', description: 'Established strong foundation with early adopters', icon: UserGroupIcon },
-    { year: 2022, title: 'Team Expansion', description: 'Grew to 15 talented professionals', icon: ChartBarIcon },
-    { year: 2023, title: 'Product Launch', description: 'Launched HRM and CRM products for businesses', icon: SparklesIcon },
-    { year: 2024, title: '150+ Projects', description: 'Milestone achievement in project delivery', icon: CheckBadgeIcon },
-    { year: 2025, title: 'Innovation Focus', description: 'Expanded AI and automation services', icon: LightBulbIcon },
+    { year: 2020, title: 'Sdev In Tech Founded', description: 'Started with a vision to deliver premium digital solutions at affordable prices', icon: RocketLaunchIcon },
+    { year: 2021, title: 'First Websites Launched', description: 'Delivered our first batch of professional business websites across industries', icon: UserGroupIcon },
+    { year: 2022, title: 'Mobile App Development', description: 'Launched New Upasam App & Royal Educare App on Google Play Store', icon: ChartBarIcon },
+    { year: 2023, title: '4+ Apps Live', description: 'Digital Health Record, Local Service Box & Innocricket App deployed successfully', icon: SparklesIcon },
+    { year: 2024, title: '6th App Delivered', description: 'Ridodrop Pickup & Drop App built — 6 Android apps live in market', icon: CheckBadgeIcon },
+    { year: 2025, title: 'Performance Marketing', description: 'Full SMM + SEO service launched at ₹16,000/month — ROI-driven growth for clients', icon: LightBulbIcon },
   ];
 
   const benefits = [
     {
-      icon: AcademicCapIcon,
-      title: 'Expert Team',
-      description: 'Highly skilled professionals with deep industry expertise',
-    },
-    {
       icon: TrophyIcon,
-      title: 'Proven Track Record',
-      description: '200+ successful projects delivered on time and budget',
+      title: '4+ Apps on Play Store',
+      description: 'Android apps across healthcare, education, service booking and digital record management — all live',
     },
     {
-      icon: BoltIcon,
-      title: 'Agile Methodology',
-      description: 'Fast, flexible, and adaptive development approach',
+      icon: AcademicCapIcon,
+      title: '8+ Websites Delivered',
+      description: 'Restaurant, resort, healthcare, pharma, fashion, education — all mobile-first with modern UI/UX',
     },
     {
-      icon: ClockIcon,
-      title: '24/7 Support',
-      description: 'Round-the-clock assistance for your peace of mind',
+      icon: ChartBarIcon,
+      title: '3+ E-Commerce Stores',
+      description: 'Full stores with product management, cart, order system and conversion-optimised checkout',
     },
     {
       icon: CurrencyDollarIcon,
-      title: 'Competitive Pricing',
-      description: 'Premium quality at fair and transparent rates',
+      title: 'Affordable Pricing',
+      description: 'Portfolio valued ₹15L–₹25L in market rates. You get premium quality without the premium price tag',
+    },
+    {
+      icon: ShieldCheckIcon,
+      title: 'Transparent Communication',
+      description: 'Clear updates, honest timelines and dedicated support at every stage of your project',
     },
     {
       icon: HeartIcon,
-      title: 'Long-term Partnership',
-      description: 'Building lasting relationships with our clients',
+      title: 'Long-term Partnerships',
+      description: 'We don\'t just close projects — we build trusted, long-term client relationships',
     },
   ];
 
@@ -306,23 +295,34 @@ export default function AboutPage() {
   return (
     <div className="bg-black text-white min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950 to-purple-950">
-          <FloatingParticles />
-        </div>
-
-        {/* Parallax Background Image */}
-        <motion.div
-          style={{ y: heroY, opacity: heroOpacity }}
-          className="absolute inset-0 opacity-20"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200"
-            alt="Team collaboration"
-            className="w-full h-full object-cover"
+        <div className="absolute inset-0 bg-black overflow-hidden">
+          {/* Gradient Orbs */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.3, scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            className="absolute top-1/4 left-1/4 w-64 h-64 md:w-[500px] md:h-[500px] bg-cyan-500/30 rounded-full blur-3xl"
           />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.2, scale: 1 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: 'easeOut' }}
+            className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-[400px] md:h-[400px] bg-purple-500/20 rounded-full blur-3xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ duration: 1.5, delay: 0.6, ease: 'easeOut' }}
+            className="absolute top-1/2 right-1/3 w-48 h-48 md:w-80 md:h-80 bg-blue-500/20 rounded-full blur-3xl"
+          />
+          {/* Dot grid */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.04) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
 
         {/* Hero Content */}
         <motion.div
@@ -335,18 +335,26 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
           >
-            Building Digital Excellence Since 2020
+            Your Complete Digital Partner
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl md:text-3xl text-gray-300 mb-12"
+            className="text-xl md:text-2xl text-gray-300 mb-6"
           >
-            We Transform Ideas into Powerful Digital Solutions
+            Websites · Mobile Apps · Performance Marketing
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+          >
+            Premium quality at affordable pricing — built to generate growth, visibility and long-term success for startups, SMEs and enterprises across India.
           </motion.p>
 
           <motion.button
@@ -396,13 +404,9 @@ export default function AboutPage() {
               whileHover={{ y: -10, scale: 1.05 }}
               className="backdrop-blur-xl bg-white/5 rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/50 transition-all"
             >
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="mb-4"
-              >
+              <div className="mb-4">
                 <stat.icon className="w-12 h-12 text-cyan-400" />
-              </motion.div>
+              </div>
               <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
                 <AnimatedCounter end={stat.number} suffix={stat.suffix} />
               </div>
@@ -429,13 +433,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-300 text-lg">
                 <p>
-                  Founded in 2020, we started with a simple yet powerful vision: to bridge the gap between innovative technology and business success. What began as a small team of passionate developers has grown into a rapidly expanding digital solutions provider.
+                  Sdev In Tech is a results-driven digital solutions company delivering end-to-end services in Website Development, E-Commerce Solutions, Mobile Application Development, and Performance Marketing.
                 </p>
                 <p>
-                  Over the past 5 years, we've evolved from a local startup to a trusted software development partner. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.
+                  We build scalable digital products designed to enhance brand visibility, generate qualified leads, and increase business revenue. Our approach combines modern technology, strategic marketing, and conversion-focused design to deliver measurable growth.
                 </p>
                 <p>
-                  Today, we're proud to serve clients across continents, delivering cutting-edge solutions in AI, cloud computing, mobile development, and enterprise software. Our success is measured not just in projects delivered, but in the lasting partnerships we've built and the real-world impact we've created.
+                  Our combined portfolio reflects projects valued at over ₹15 Lakhs to ₹25 Lakhs in market standards — delivered across healthcare, education, restaurants, fashion, pharma, retail and service-based industries across India.
                 </p>
               </div>
             </motion.div>
@@ -491,82 +495,11 @@ export default function AboutPage() {
                 whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(14, 165, 233, 0.3)' }}
                 className="backdrop-blur-xl bg-white/5 rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/50 transition-all group"
               >
-                <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
-                  transition={{ duration: 0.6 }}
-                  className="mb-6"
-                >
+                <div className="mb-6">
                   <value.icon className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300" />
-                </motion.div>
+                </div>
                 <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
                 <p className="text-gray-400">{value.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-950/30 to-cyan-950/30" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
-          >
-            Meet Our Leadership Team
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center text-gray-400 text-lg mb-16"
-          >
-            The visionaries driving innovation and excellence
-          </motion.p>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="backdrop-blur-xl bg-white/5 rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all group"
-              >
-                <div className="relative overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                    src={`https://i.pravatar.cc/300?img=${member.img}`}
-                    alt={member.name}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1 text-white">{member.name}</h3>
-                  <p className="text-cyan-400 mb-3">{member.title}</p>
-                  <motion.a
-                    whileHover={{ scale: 1.1 }}
-                    href="#"
-                    className="inline-block text-gray-400 hover:text-cyan-400 transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </motion.a>
-                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -678,15 +611,11 @@ export default function AboutPage() {
                   </motion.div>
                 </div>
 
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  transition={{ duration: 0.4 }}
-                  className="w-2/12 flex justify-center relative z-10"
-                >
+                <div className="w-2/12 flex justify-center relative z-10">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center border-4 border-black">
                     <milestone.icon className="w-8 h-8 text-white" />
                   </div>
-                </motion.div>
+                </div>
 
                 <div className="w-5/12" />
               </motion.div>
@@ -878,32 +807,37 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center relative z-10"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Want to Be Part of Our Journey?
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
+            <span className="text-cyan-400 text-sm font-semibold">Our Vision</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Trusted Digital Transformation Partner for India
           </h2>
-          <p className="text-xl text-gray-300 mb-10">
-            Join our talented team and help shape the future of digital innovation. We're always looking for passionate individuals who want to make a difference.
+          <p className="text-lg text-gray-300 mb-4">
+            To become a trusted digital transformation partner for startups, SMEs, and enterprises across India by delivering scalable technology solutions and measurable marketing growth.
+          </p>
+          <p className="text-base text-gray-400 mb-10">
+            Phone: <a href="tel:+919381820806" className="text-cyan-400 hover:underline">+91 93818 20806</a> &nbsp;·&nbsp; Website: <a href="https://www.sdevintech.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">www.sdevintech.com</a>
           </p>
 
-          <motion.a
-            href="/careers"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block relative group"
-          >
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-75 blur-lg"
-            />
-            <div className="relative px-10 py-5 bg-black rounded-full border-2 border-transparent group-hover:border-cyan-400 transition-all">
-              <span className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                View Open Positions
-              </span>
-            </div>
-          </motion.a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold text-lg shadow-lg shadow-cyan-500/30"
+            >
+              Start Your Project
+            </motion.a>
+            <motion.a
+              href="/careers"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-white/5 border border-white/20 text-white rounded-xl font-semibold text-lg hover:bg-white/10 transition-all"
+            >
+              View Open Positions
+            </motion.a>
+          </div>
         </motion.div>
       </section>
     </div>

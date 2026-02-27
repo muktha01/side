@@ -1,33 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Rocket, Users, Award, TrendingUp } from 'lucide-react';
+import { Rocket, Smartphone, Globe, TrendingUp, CheckCircle } from 'lucide-react';
 
 export default function AboutSnapshot() {
   const highlights = [
     {
-      icon: Rocket,
-      number: '5+',
-      label: 'Years of Excellence',
-      description: 'Since 2020'
+      icon: Smartphone,
+      number: '4+',
+      label: 'Android Apps on Play Store',
+      description: 'Live on Google Play Store'
     },
     {
-      icon: Users,
-      number: '200+',
-      label: 'Projects Delivered',
+      icon: Globe,
+      number: '8+',
+      label: 'Business Websites Delivered',
       description: 'Across multiple industries'
     },
     {
-      icon: Award,
-      number: '150+',
-      label: 'Happy Clients',
-      description: 'Worldwide'
+      icon: TrendingUp,
+      number: '3+',
+      label: 'E-Commerce Stores Built',
+      description: 'Grace Market, Ambo Retail & more'
     },
     {
-      icon: TrendingUp,
-      number: '25+',
-      label: 'Expert Team',
-      description: 'Dedicated professionals'
+      icon: CheckCircle,
+      number: '₹25L',
+      label: 'Portfolio Value',
+      description: 'In market standard rates'
     }
   ];
 
@@ -47,23 +47,31 @@ export default function AboutSnapshot() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
-              Building Digital Solutions Since{' '}
+              Your Complete{' '}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                2020
+                Digital Partner
               </span>
             </h2>
 
             <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 leading-relaxed">
-              Sdev is a dynamic digital agency specializing in innovative web and mobile solutions, 
-              cutting-edge AI tools, comprehensive digital marketing strategies, professional training programs, 
-              and flexible financial solutions.
+              Sdev In Tech is a results-driven digital solutions company delivering end-to-end services in
+              Website Development, E-Commerce Solutions, Mobile App Development, and Performance Marketing.
             </p>
 
-            <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
-              Our mission is to empower businesses and individuals with technology-driven solutions 
-              that transform ideas into reality. From startups to established enterprises, we deliver 
-              excellence in every project we undertake.
+            <p className="text-base md:text-lg text-gray-300 mb-5 md:mb-6 leading-relaxed">
+              We build scalable digital products designed to enhance brand visibility, generate qualified leads,
+              and increase business revenue — with a portfolio valued at over ₹15L–₹25L in market standards.
             </p>
+
+            {/* Trust Badges */}
+            <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
+              {['Proven Portfolio', 'Affordable Pricing', 'Transparent Communication', 'Lifetime Support'].map((badge) => (
+                <span key={badge} className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs md:text-sm font-medium">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                  {badge}
+                </span>
+              ))}
+            </div>
 
             <motion.a
               href="/about"

@@ -169,59 +169,38 @@ export default function MaintenancePage() {
 
   const pricingPlans = [
     {
-      name: 'Basic Care',
-      price: 299,
-      priceAnnual: 2990,
-      savings: 598,
-      description: 'Essential maintenance',
+      name: '3 Months FREE',
+      price: null,
+      priceAnnual: null,
+      savings: null,
+      description: '3 months server maintenance is FREE with every project',
       features: [
-        'Monthly updates',
-        'Weekly backups',
+        'Included with all website projects',
+        'Included with all app projects',
+        'Bug fixes & minor updates',
+        'Performance monitoring',
+        'Security checks',
+        'Lifetime technical support'
+      ],
+      cta: 'Start a Project',
+      popular: true,
+      isFree: true
+    },
+    {
+      name: 'Extended Maintenance',
+      price: 5000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Ongoing maintenance after the free period',
+      features: [
+        'Monthly updates & patches',
+        'Content & text updates',
+        'Bug fixes & performance tuning',
         'Uptime monitoring',
-        'Email support',
-        'Security scanning',
-        'Performance check',
-        '2 hours support/month'
+        'WhatsApp / call support',
+        'Priority response'
       ],
-      cta: 'Get Started',
-      popular: false
-    },
-    {
-      name: 'Business Care',
-      price: 599,
-      priceAnnual: 5990,
-      savings: 1198,
-      description: 'Complete maintenance',
-      features: [
-        'Weekly updates',
-        'Daily backups',
-        '24/7 monitoring',
-        'Priority support',
-        'Bug fixes',
-        'Content updates',
-        'Speed optimization',
-        '5 hours support/month'
-      ],
-      cta: 'Get Started',
-      popular: true
-    },
-    {
-      name: 'Premium Care',
-      price: 999,
-      priceAnnual: 9990,
-      savings: 1998,
-      description: 'White-glove service',
-      features: [
-        'Daily updates',
-        'Real-time backups',
-        'Advanced monitoring',
-        '24/7 support',
-        'Dedicated manager',
-        'Unlimited changes',
-        'Emergency response',
-        '10 hours support/month'
-      ],
-      cta: 'Get Started',
+      cta: 'Get Quote',
       popular: false
     }
   ];

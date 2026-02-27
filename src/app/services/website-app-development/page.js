@@ -40,88 +40,88 @@ const categoryData = {
   ],
   services: [
     {
-      id: 'custom-website',
-      name: 'Custom Website Development',
-      description: 'Professional website design and development tailored to your brand and business needs.',
+      id: 'static-website',
+      name: 'Static Business Website',
+      description: '4–6 page professional website ideal for small businesses — clean, fast, and SEO-ready.',
       features: [
-        'Responsive design for all devices',
-        'SEO-optimized structure',
-        'Fast loading speeds',
-        'CMS integration',
-        'Custom functionality'
+        'Home, About, Services, Contact pages',
+        'Mobile responsive design',
+        'Basic SEO setup',
+        'Fast loading speed',
+        'WhatsApp / Inquiry form'
       ],
-      startingPrice: 999,
+      startingPrice: 10000,
+      popular: false
+    },
+    {
+      id: 'dynamic-website',
+      name: 'Dynamic Business Website',
+      description: 'Admin panel + database-driven website with dynamic content management.',
+      features: [
+        'Admin panel included',
+        'Database integration',
+        'Dynamic content management',
+        'Custom forms & workflows',
+        'Mobile responsive'
+      ],
+      startingPrice: 35000,
+      popular: false
+    },
+    {
+      id: 'restaurant-website',
+      name: 'Restaurant Website',
+      description: 'Showcase your menu, gallery, and take inquiries — perfect for restaurants & cafes.',
+      features: [
+        'Menu section & gallery',
+        'WhatsApp integration',
+        'Inquiry / reservation form',
+        'Mobile responsive',
+        'SEO optimized'
+      ],
+      startingPrice: 30000,
+      popular: false
+    },
+    {
+      id: 'booking-website',
+      name: 'Resort / Hotel Booking Website',
+      description: 'Full booking system with room management, availability calendar, and inquiry system.',
+      features: [
+        'Room management system',
+        'Online booking & availability calendar',
+        'Inquiry & confirmation system',
+        'Gallery & virtual tour section',
+        'Admin dashboard'
+      ],
+      startingPrice: 60000,
+      popular: false
+    },
+    {
+      id: 'ecommerce',
+      name: 'E-Commerce Website',
+      description: 'Complete online store with product management, cart, checkout, and order tracking.',
+      features: [
+        'Product catalog & categories',
+        'Filters, cart & checkout',
+        'Order management system',
+        'Admin panel',
+        'Mobile responsive'
+      ],
+      startingPrice: 75000,
       popular: false
     },
     {
       id: 'mobile-app',
       name: 'Mobile App Development',
-      description: 'Native and cross-platform mobile applications for iOS and Android devices.',
+      description: 'Android / cross-platform apps built for real-world business needs.',
       features: [
-        'iOS & Android development',
-        'Cross-platform solutions',
-        'App Store optimization',
-        'Push notifications',
-        'Offline functionality'
+        'Android & cross-platform (Flutter)',
+        'Custom UI/UX design',
+        'Backend & database integration',
+        'Google Play Store deployment',
+        'Lifetime support included'
       ],
-      startingPrice: 2999,
+      startingPrice: 50000,
       popular: true
-    },
-    {
-      id: 'ecommerce',
-      name: 'E-commerce Solutions',
-      description: 'Full-featured online stores with payment integration and inventory management.',
-      features: [
-        'Product catalog management',
-        'Secure payment gateway',
-        'Order tracking system',
-        'Customer accounts',
-        'Analytics dashboard'
-      ],
-      startingPrice: 1999,
-      popular: false
-    },
-    {
-      id: 'web-app',
-      name: 'Web Application Development',
-      description: 'Complex web applications with advanced functionality and user interactions.',
-      features: [
-        'Custom business logic',
-        'Real-time features',
-        'Database integration',
-        'API development',
-        'Scalable architecture'
-      ],
-      startingPrice: 3999,
-      popular: false
-    },
-    {
-      id: 'admin-panel',
-      name: 'Admin Panel & Dashboard',
-      description: 'Powerful admin interfaces for managing your business operations efficiently.',
-      features: [
-        'User management',
-        'Data visualization',
-        'Report generation',
-        'Role-based access',
-        'Activity logging'
-      ],
-      startingPrice: 1499,
-      popular: false
-    },
-    {
-      id: 'maintenance',
-      name: 'Website Maintenance & Support',
-      description: 'Ongoing support, updates, and optimization for your existing websites and apps.',
-      features: [
-        'Regular updates',
-        'Security patches',
-        'Performance optimization',
-        'Bug fixes',
-        '24/7 support'
-      ],
-      startingPrice: 299,
-      popular: false
     }
   ],
   process: [
@@ -163,58 +163,107 @@ const categoryData = {
   ],
   pricingPlans: [
     {
-      name: 'Starter',
-      price: 999,
-      priceAnnual: 899,
-      savings: 100,
-      description: 'Perfect for small businesses and startups',
+      name: 'Static Website',
+      price: 10000,
+      priceMax: 25000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Ideal for small businesses, professionals & startups',
       features: [
-        'Up to 5 pages',
-        'Responsive design',
+        '4–6 pages (Home, About, Services, Contact)',
+        'Mobile responsive design',
         'Basic SEO setup',
-        'Contact form',
-        '1 month support',
-        'Social media integration'
+        'WhatsApp / inquiry form',
+        'Fast loading speed',
+        'Lifetime support'
       ],
       cta: 'Get Started'
     },
     {
-      name: 'Professional',
-      price: 2499,
-      priceAnnual: 2199,
-      savings: 300,
-      description: 'Ideal for growing businesses',
+      name: 'Dynamic Website',
+      price: 35000,
+      priceMax: 55000,
+      priceAnnual: null,
+      savings: null,
+      description: 'For businesses needing admin control & dynamic content',
       features: [
-        'Up to 15 pages',
-        'Advanced animations',
-        'SEO optimization',
-        'Blog/News section',
-        'Email integration',
-        '3 months support',
-        'Analytics setup',
-        'Content updates'
+        'Admin panel included',
+        'Database integration',
+        'Dynamic content management',
+        'Custom forms & workflows',
+        'Mobile responsive & SEO ready',
+        'Lifetime support'
       ],
-      cta: 'Get Started',
+      cta: 'Get Started'
+    },
+    {
+      name: 'Restaurant Website',
+      price: 30000,
+      priceMax: 45000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Perfect for restaurants, cafes & food businesses',
+      features: [
+        'Menu section & gallery',
+        'WhatsApp integration',
+        'Inquiry / reservation form',
+        'Google Maps integration',
+        'Mobile responsive & SEO optimized',
+        'Lifetime support'
+      ],
+      cta: 'Get Started'
+    },
+    {
+      name: 'Booking Website',
+      price: 60000,
+      priceMax: 90000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Full booking system for resorts, hotels & rental businesses',
+      features: [
+        'Room / slot management',
+        'Online booking & availability calendar',
+        'Confirmation & notification system',
+        'Gallery & virtual tour',
+        'Admin dashboard',
+        'Lifetime support'
+      ],
+      cta: 'Get Quote',
       popular: true
     },
     {
-      name: 'Enterprise',
-      price: 4999,
-      priceAnnual: 4499,
-      savings: 500,
-      description: 'Complete solution for large businesses',
+      name: 'E-Commerce Store',
+      price: 75000,
+      priceMax: 120000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Complete online store with cart, checkout & order management',
       features: [
-        'Unlimited pages',
-        'Custom functionality',
-        'Advanced SEO',
-        'E-commerce features',
-        'API integrations',
-        '6 months support',
-        'Priority support',
-        'Training sessions',
-        'Dedicated manager'
+        'Product catalog, categories & filters',
+        'Cart, checkout & payment gateway',
+        'Order management system',
+        'Admin panel & inventory',
+        'Mobile responsive & SEO ready',
+        'Lifetime support'
       ],
-      cta: 'Contact Sales'
+      cta: 'Get Quote'
+    },
+    {
+      name: 'Mobile App',
+      price: 50000,
+      priceMax: null,
+      priceAnnual: null,
+      savings: null,
+      description: 'Android / cross-platform app for your business',
+      features: [
+        'Android + cross-platform (Flutter)',
+        'Custom UI/UX design',
+        'Backend & database integration',
+        'Google Play Store deployment',
+        'Admin panel included',
+        'Lifetime support'
+      ],
+      cta: 'Get Quote'
     }
   ],
   faqs: [
@@ -252,16 +301,16 @@ const categoryData = {
     }
   ],
   comparisonFeatures: [
-    { name: 'Number of Pages', values: ['Up to 5', 'Up to 15', 'Unlimited'] },
-    { name: 'Responsive Design', values: [true, true, true] },
+    { name: 'Pages / Scope', values: ['4–6 Pages', 'Dynamic + Admin', 'Full Store'] },
+    { name: 'Mobile Responsive', values: [true, true, true] },
     { name: 'SEO Optimization', values: ['Basic', 'Advanced', 'Advanced'] },
-    { name: 'Content Management System', values: [true, true, true] },
-    { name: 'E-commerce Features', values: [false, 'Optional', true] },
-    { name: 'Custom Functionality', values: [false, 'Limited', 'Unlimited'] },
-    { name: 'API Integrations', values: [false, 'Up to 3', 'Unlimited'] },
-    { name: 'Support Duration', values: ['3 months', '6 months', '6 months'] },
-    { name: 'Training Sessions', values: [false, '1 session', '3 sessions'] },
-    { name: 'Priority Support', values: [false, false, true] }
+    { name: 'Admin Panel', values: [false, true, true] },
+    { name: 'E-Commerce Features', values: [false, false, true] },
+    { name: 'WhatsApp / Inquiry Form', values: [true, true, true] },
+    { name: 'Payment Gateway', values: [false, false, true] },
+    { name: 'Order Management', values: [false, false, true] },
+    { name: 'Lifetime Support', values: [true, true, true] },
+    { name: 'Starting Price', values: ['₹10,000', '₹35,000', '₹75,000'] }
   ]
 };
 

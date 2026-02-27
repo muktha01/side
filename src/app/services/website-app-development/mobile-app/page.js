@@ -169,62 +169,40 @@ export default function MobileAppPage() {
 
   const pricingPlans = [
     {
-      name: 'Cross-Platform MVP',
-      price: 2999,
+      name: 'Standard App',
+      price: 50000,
       priceAnnual: null,
       savings: null,
-      description: 'Perfect for startups & MVPs',
+      description: 'Android / cross-platform app for your business',
       features: [
-        'React Native or Flutter',
-        'iOS & Android apps',
-        'Up to 10 screens',
-        'Basic features',
-        'Push notifications',
-        'App Store submission',
-        '3-month support',
-        'Bug fixes'
-      ],
-      cta: 'Get Started',
-      popular: false
-    },
-    {
-      name: 'Business App',
-      price: 4999,
-      priceAnnual: null,
-      savings: null,
-      description: 'Full-featured business app',
-      features: [
-        'Native or cross-platform',
-        'iOS & Android apps',
-        'Up to 20 screens',
-        'Advanced features',
-        'API integrations',
-        'Payment gateway',
-        'Analytics integration',
-        '6-month support'
+        'Android & cross-platform (Flutter)',
+        'Custom UI/UX design',
+        'Backend & database integration',
+        'Google Play Store deployment',
+        'Admin panel included',
+        'Lifetime support'
       ],
       cta: 'Get Started',
       popular: true
     },
     {
-      name: 'Enterprise App',
-      price: 9999,
+      name: 'App + Website Bundle',
+      price: null,
       priceAnnual: null,
       savings: null,
-      description: 'Complex enterprise solution',
+      description: 'Get a FREE website + 1 month marketing with every app project',
       features: [
-        'Native development',
-        'iOS & Android apps',
-        'Unlimited screens',
-        'Complex features',
-        'Custom backend',
-        'Advanced security',
-        'Dedicated team',
-        '12-month support',
-        'Priority updates'
+        'Full Android / cross-platform app',
+        '1 Business Website FREE',
+        'Admin dashboard included',
+        '1 Month Digital Marketing FREE',
+        '3 Months Server Maintenance FREE',
+        'Lifetime Technical Support FREE'
       ],
-      cta: 'Contact Sales',
-      popular: false
+      cta: 'Claim Bundle',
+      popular: false,
+      isFree: false,
+      isBundle: true
     }
   ];
 

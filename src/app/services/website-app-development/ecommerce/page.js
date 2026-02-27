@@ -169,59 +169,38 @@ export default function EcommercePage() {
 
   const pricingPlans = [
     {
-      name: 'Starter Store',
-      price: 1999,
+      name: 'Standard E-Commerce',
+      price: 75000,
       priceAnnual: null,
       savings: null,
-      description: 'Perfect for small businesses',
+      description: 'Complete online store for retail businesses',
       features: [
-        'Up to 100 products',
-        'Single payment gateway',
-        'Basic shipping options',
-        'Customer accounts',
-        'Mobile responsive',
-        'SEO optimized',
-        '3-month support'
-      ],
-      cta: 'Get Started',
-      popular: false
-    },
-    {
-      name: 'Business Store',
-      price: 3999,
-      priceAnnual: null,
-      savings: null,
-      description: 'Full-featured online store',
-      features: [
-        'Unlimited products',
-        'Multiple payments',
-        'Advanced shipping',
-        'Inventory management',
-        'Analytics dashboard',
-        'Email marketing',
-        'Wishlist feature',
-        '6-month support'
+        'Product catalog, categories & filters',
+        'Cart, checkout & payment gateway',
+        'Order management system',
+        'Admin panel & inventory',
+        'Mobile responsive & SEO ready',
+        'Lifetime support'
       ],
       cta: 'Get Started',
       popular: true
     },
     {
-      name: 'Enterprise',
-      price: 7999,
+      name: 'Advanced E-Commerce',
+      price: 120000,
       priceAnnual: null,
       savings: null,
-      description: 'Multi-vendor marketplace',
+      description: 'Feature-rich store with custom integrations',
       features: [
-        'Multi-vendor support',
-        'Custom features',
-        'Advanced analytics',
-        'API access',
-        'Dedicated support',
-        'Custom integrations',
-        'Priority updates',
-        '12-month support'
+        'Everything in Standard',
+        'Multi-category advanced filtering',
+        'Coupon & discount management',
+        'Customer accounts & wishlist',
+        'Sales analytics dashboard',
+        'Third-party API integrations',
+        'Lifetime support'
       ],
-      cta: 'Contact Sales',
+      cta: 'Get Quote',
       popular: false
     }
   ];

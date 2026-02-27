@@ -10,47 +10,47 @@ export default function WebsiteSolutionsPage() {
   };
 
   const stats = [
-    { value: '200+', label: 'Websites Delivered' },
-    { value: '95+', label: 'Average PageSpeed Score' },
-    { value: '3x', label: 'Faster Load Times' }
+    { value: '8+', label: 'Business Websites Live' },
+    { value: '3+', label: 'E-Commerce Stores' },
+    { value: '₹10K', label: 'Websites Starting From' }
   ];
 
   const services = [
     {
-      title: 'Corporate Websites',
-      description: 'Professional corporate websites that establish your brand presence and credibility online.',
+      title: 'Business & Corporate Websites',
+      description: 'Professional static or dynamic websites for businesses, clinics, restaurants, pharma companies and more.',
       features: [
-        'Responsive design for all devices',
-        'SEO-optimized architecture',
-        'Content management system',
-        'Performance optimization'
+        'Mobile responsive design',
+        'Basic SEO setup',
+        'WhatsApp / inquiry form',
+        'Fast loading & optimized'
       ],
-      image: 'https://placehold.co/500x400/0f172a/06b6d4?text=Corporate+Website',
-      pricing: 'Starting from ₹50,000'
+      image: 'https://placehold.co/500x400/0f172a/06b6d4?text=Business+Website',
+      pricing: 'Starting from ₹18,000'
     },
     {
       title: 'E-Commerce Websites',
-      description: 'Full-featured online stores with secure payment integration and inventory management.',
+      description: 'Full-featured online stores with product management, cart, checkout and order tracking.',
       features: [
-        'Product catalog management',
-        'Payment gateway integration',
-        'Shopping cart functionality',
-        'Order management system'
+        'Product catalog & categories',
+        'Cart, checkout & payment gateway',
+        'Order management system',
+        'Admin panel included'
       ],
       image: 'https://placehold.co/500x400/0f172a/3b82f6?text=E-Commerce',
-      pricing: 'Starting from ₹1,50,000'
+      pricing: 'Starting from ₹75,000'
     },
     {
-      title: 'Landing Pages',
-      description: 'High-converting landing pages designed to capture leads and drive conversions.',
+      title: 'Booking / Resort Websites',
+      description: 'Complete booking system with room management, availability calendar and inquiry system.',
       features: [
-        'Conversion-focused design',
-        'A/B testing capabilities',
-        'Form integration',
-        'Analytics setup'
+        'Room / slot management',
+        'Online booking & availability calendar',
+        'Gallery & virtual tour section',
+        'Admin dashboard'
       ],
-      image: 'https://placehold.co/500x400/0f172a/8b5cf6?text=Landing+Page',
-      pricing: 'Starting from ₹25,000'
+      image: 'https://placehold.co/500x400/0f172a/8b5cf6?text=Booking+Website',
+      pricing: 'Starting from ₹60,000'
     }
   ];
 

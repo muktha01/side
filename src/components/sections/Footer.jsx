@@ -37,11 +37,11 @@ export default function Footer() {
   ];
 
   const compliance = [
-    'ISO 27001:2022',
-    'ISO 9001:2015',
-    'SOC 2 Type 2',
-    'GDPR',
-    'ISMS Policy',
+    'Website Development',
+    'Android App Development',
+    'Digital Marketing (SMM + SEO)',
+    'Social Media Management',
+    'Lead Generation Campaigns',
   ];
 
   return (
@@ -54,16 +54,26 @@ export default function Footer() {
             <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-6 group">
               <img 
                 src="/images/logo.png" 
-                alt="SDEV Solutions Logo" 
+                alt="Sdev In Tech Logo" 
                 className="h-8 md:h-10 w-auto"
               />
               <span className="text-white font-bold text-base md:text-lg">
-                SDEV Solutions
+                Sdev In Tech
               </span>
             </Link>
-            <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
-              Software Development Company for Scalable & Innovative Solutions
+            <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
+              Premium Digital Transformation & Performance Marketing — Websites, Mobile Apps & ROI-driven Marketing built as a complete digital ecosystem.
             </p>
+            <div className="mb-4 md:mb-6 space-y-1">
+              <a href="tel:+919381820806" className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-xs md:text-sm">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                +91 93818 20806
+              </a>
+              <a href="https://www.sdevintech.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-xs md:text-sm">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+                www.sdevintech.com
+              </a>
+            </div>
             {/* Social Media */}
             <div className="flex items-center gap-3">
               <motion.a
@@ -160,7 +170,7 @@ export default function Footer() {
 
           {/* Compliance & Offices */}
           <div>
-            <h3 className="text-white font-bold text-base md:text-lg mb-3 md:mb-6">Compliances</h3>
+            <h3 className="text-white font-bold text-base md:text-lg mb-3 md:mb-6">Core Offerings</h3>
             <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
               {compliance.map((item) => (
                 <li key={item} className="text-gray-400 text-xs md:text-sm flex items-center gap-2">
@@ -185,7 +195,7 @@ export default function Footer() {
         <div className="pt-6 md:pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
             <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
-              © {currentYear} SDEV Solutions. All rights reserved.
+              © {currentYear} Sdev In Tech. All rights reserved.
             </p>
             <div className="flex items-center gap-4 md:gap-6">
               <Link

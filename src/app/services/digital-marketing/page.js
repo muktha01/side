@@ -14,17 +14,17 @@ import { Megaphone, Search, Smartphone, Target, Mail, PenTool } from 'lucide-rea
 export default function DigitalMarketingPage() {
   const categoryData = {
     id: 'digital-marketing',
-    title: 'Digital Marketing Services',
-    description: 'Amplify your reach and maximize ROI with data-driven marketing strategies that deliver measurable results.',
+    title: 'Digital Marketing & Performance Growth',
+    description: 'Complete digital marketing solutions focused on ROI — Social Media Handling, Creative Production, Brand Awareness, Lead Generation and Paid Ads.',
     icon: Megaphone,
     gradient: 'from-purple-500 to-blue-500',
     benefits: [
-      'Data-driven campaign strategies',
-      'Multi-channel marketing approach',
-      'Proven ROI optimization',
-      'Expert team with 10+ years experience',
-      'Real-time analytics and reporting',
-      '24/7 campaign monitoring'
+      '16 creative posters per month',
+      '4 promotional videos / reels',
+      '2 brand awareness campaigns',
+      'Lead generation setup & management',
+      'Facebook & Instagram ads setup',
+      'Ad optimisation & performance monitoring'
     ]
   };
 
@@ -42,68 +42,68 @@ export default function DigitalMarketingPage() {
         'Local SEO optimization',
         'Monthly performance reports'
       ],
-      startingPrice: 799,
+      startingPrice: 10000,
       popular: true
     },
     {
       id: 'social-media-marketing',
       name: 'Social Media Marketing',
       icon: Smartphone,
-      description: 'Build engaged communities and drive conversions across all major social platforms.',
+      description: 'Build engaged communities and drive conversions — Facebook, Instagram, and more.',
       features: [
-        'Content strategy & planning',
-        'Multi-platform management',
+        '16 creative posters / month',
+        '4 promotional videos / reels',
+        'Social media page handling',
         'Community engagement',
-        'Paid advertising campaigns',
-        'Influencer partnerships',
-        'Analytics & insights'
+        'Audience targeting & growth',
+        'Monthly analytics report'
       ],
-      startingPrice: 699
+      startingPrice: 10000
     },
     {
       id: 'ppc-advertising',
-      name: 'PPC Advertising',
+      name: 'Paid Ads (FB / IG / Google)',
       icon: Target,
-      description: 'Maximize ROI with targeted pay-per-click campaigns on Google, Facebook, and more.',
+      description: 'ROI-driven paid ad campaigns on Facebook, Instagram and Google — leads from day one.',
       features: [
         'Campaign strategy & setup',
-        'Ad copywriting & design',
+        'Ad creative design',
         'Audience targeting',
-        'Bid management',
+        'Bid management & optimisation',
         'A/B testing',
-        'Conversion tracking'
+        'Conversion tracking & reporting'
       ],
-      startingPrice: 899
+      startingPrice: 10000
     },
     {
       id: 'content-marketing',
-      name: 'Content Marketing',
+      name: 'Content & Brand Campaigns',
       icon: PenTool,
-      description: 'Create compelling content that attracts, engages, and converts your target audience.',
+      description: '2 brand awareness campaigns per month with creative posters and video content.',
       features: [
-        'Content strategy development',
-        'Blog writing & management',
-        'Video content creation',
-        'Email marketing campaigns',
-        'Infographic design',
-        'Content distribution'
+        '2 brand campaigns / month',
+        'Creative poster design',
+        'Promotional reels & videos',
+        'Caption & hashtag strategy',
+        'Scheduling & publishing',
+        'Engagement monitoring'
       ],
-      startingPrice: 599
+      startingPrice: 10000
     },
     {
-      id: 'email-marketing',
-      name: 'Email Marketing',
+      id: 'lead-generation',
+      name: 'Lead Generation',
       icon: Mail,
-      description: 'Nurture leads and drive sales with personalized email campaigns that convert.',
+      description: 'Structured lead generation setup to bring real enquiries and potential buyers to your business.',
       features: [
-        'Campaign strategy',
-        'Email design & templates',
-        'List segmentation',
-        'Automation workflows',
-        'A/B testing',
-        'Performance analytics'
+        'Lead gen form setup',
+        'Landing page integration',
+        'WhatsApp / call CTA setup',
+        'Audience retargeting',
+        'Lead tracking & reporting',
+        'Monthly optimisation'
       ],
-      startingPrice: 499
+      startingPrice: 10000
     }
   ];
 
@@ -172,61 +172,79 @@ export default function DigitalMarketingPage() {
 
   const pricingPlans = [
     {
-      name: 'Starter',
-      price: 1499,
-      priceAnnual: 14990,
-      savings: 2998,
-      description: 'Perfect for small businesses starting their digital journey',
+      name: 'Starter Package',
+      price: 10000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Essential digital marketing to build your online presence and generate leads',
       features: [
-        '2 marketing channels',
-        'Basic SEO optimization',
-        'Social media management',
-        'Monthly reporting',
-        'Email support',
-        '10 hours/month'
+        '8 Creative Posters / month',
+        '2 Promotional Videos / Reels',
+        '1 Brand Awareness Campaign',
+        'Social Media Page Handling',
+        'Facebook & Instagram Ads Setup',
+        'Performance Reporting'
       ],
       cta: 'Get Started',
-      popular: false
+      popular: false,
+      note: 'Ad budget is separate and depends on client requirements'
     },
     {
-      name: 'Professional',
-      price: 2999,
-      priceAnnual: 29990,
-      savings: 5998,
-      description: 'Comprehensive marketing for growing businesses',
+      name: 'Growth Package',
+      price: 16000,
+      priceAnnual: null,
+      savings: null,
+      description: 'Complete digital marketing solution with creative production, social handling and lead generation',
       features: [
-        '4 marketing channels',
-        'Advanced SEO & PPC',
-        'Full social media suite',
-        'Content marketing',
-        'Weekly reporting',
-        'Priority support',
-        '30 hours/month',
-        'Dedicated account manager'
+        '16 Creative Posters / month',
+        '4 Promotional Videos / Reels',
+        '2 Brand Awareness Campaigns',
+        'Lead Generation Setup',
+        'Social Media Page Handling',
+        'Facebook & Instagram Ads Setup',
+        'Ad Optimisation & Monitoring',
+        'Performance Reporting'
       ],
       cta: 'Get Started',
-      popular: true
+      popular: true,
+      note: 'Ad budget is separate and depends on client requirements'
     },
     {
-      name: 'Enterprise',
-      price: 5999,
-      priceAnnual: 59990,
-      savings: 11998,
-      description: 'Full-scale marketing solutions for large organizations',
+      name: 'Website + Marketing Bundle',
+      price: null,
+      priceAnnual: null,
+      savings: null,
+      description: 'Get 1 month digital marketing FREE with every website development project',
       features: [
-        'All marketing channels',
-        'Enterprise SEO & PPC',
-        'Multi-platform campaigns',
-        'Video & content production',
-        'Real-time reporting',
-        '24/7 support',
-        'Unlimited hours',
-        'Dedicated team',
-        'Custom integrations',
-        'Quarterly strategy reviews'
+        'Social Media Page Handling',
+        'Basic SEO Setup',
+        '3 Months Server Maintenance FREE',
+        'Lifetime Technical Support FREE',
+        'Included with all website projects',
+        'No extra charge'
       ],
-      cta: 'Contact Sales',
-      popular: false
+      cta: 'Claim with Website',
+      popular: false,
+      isFree: true
+    },
+    {
+      name: 'App + Full Ecosystem Bundle',
+      price: null,
+      priceAnnual: null,
+      savings: null,
+      description: 'App clients get a FREE website + 1 month marketing + 3 months server maintenance',
+      features: [
+        '1 Business Website FREE',
+        'Complete Admin Dashboard',
+        '1 Month Digital Marketing FREE',
+        'Social Media Handling',
+        'Basic SEO Setup',
+        '3 Months Server Maintenance FREE',
+        'Lifetime Technical Support FREE'
+      ],
+      cta: 'Claim with App',
+      popular: false,
+      isFree: true
     }
   ];
 

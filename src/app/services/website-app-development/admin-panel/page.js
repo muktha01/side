@@ -169,59 +169,38 @@ export default function AdminPanelPage() {
 
   const pricingPlans = [
     {
-      name: 'Basic Dashboard',
-      price: 1499,
+      name: 'Included FREE',
+      price: null,
       priceAnnual: null,
       savings: null,
-      description: 'Simple admin panel',
+      description: 'Admin panel is included FREE with every website & app project',
       features: [
-        'User management',
-        'Basic dashboard',
-        'Data tables',
-        'Search & filter',
-        'Export to CSV',
-        'Activity logs',
-        '3-month support'
+        'Included with all website projects',
+        'Included with all app projects',
+        'Included with e-commerce stores',
+        'User & content management',
+        'Data tables & search',
+        'Lifetime support'
       ],
-      cta: 'Get Started',
-      popular: false
+      cta: 'Start a Project',
+      popular: true,
+      isFree: true
     },
     {
-      name: 'Business Panel',
-      price: 2999,
+      name: 'Standalone Admin Panel',
+      price: 35000,
       priceAnnual: null,
       savings: null,
-      description: 'Feature-rich admin system',
+      description: 'Custom admin dashboard for existing systems or standalone use',
       features: [
-        'Advanced dashboard',
-        'Data visualization',
-        'Custom reports',
-        'Role-based access',
-        'PDF/Excel export',
-        'Email notifications',
+        'Custom dashboard & data views',
+        'Role-based access control',
+        'Reports & PDF/Excel export',
+        'Email & WhatsApp notifications',
         'API integration',
-        '6-month support'
+        'Lifetime support'
       ],
-      cta: 'Get Started',
-      popular: true
-    },
-    {
-      name: 'Enterprise',
-      price: 5999,
-      priceAnnual: null,
-      savings: null,
-      description: 'Complex admin solution',
-      features: [
-        'Custom features',
-        'Real-time analytics',
-        'Advanced permissions',
-        'Audit trail',
-        'Multi-language',
-        'White-label option',
-        'Priority support',
-        '12-month support'
-      ],
-      cta: 'Contact Sales',
+      cta: 'Get Quote',
       popular: false
     }
   ];

@@ -1,14 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import Badge from '@/components/ui/Badge';
-import Button from '@/components/ui/Button';
 import { staggerContainer, cardAnimations } from '@/lib/animationVariants';
 
 export default function ServiceShowcase({ services, categoryName }) {
-  const pathname = usePathname();
   return (
     <section id="services" className="section-padding relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -36,14 +32,10 @@ export default function ServiceShowcase({ services, categoryName }) {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {services.map((service, index) => (
-            <Link 
-              key={service.id}
-              href={`${pathname}/${service.id}`}
-              className="block h-full"
-            >
+            <div key={service.id} className="block h-full">
               <motion.div
                 variants={cardAnimations.card}
-                className={`glass-card glow-border p-8 relative overflow-hidden group h-full cursor-pointer ${
+                className={`glass-card glow-border p-8 relative overflow-hidden group h-full ${
                   service.popular ? 'lg:col-span-2' : ''
                 }`}
               >
@@ -92,23 +84,20 @@ export default function ServiceShowcase({ services, categoryName }) {
                 </div>
 
                 {/* CTA */}
-                <div 
-                  className={`inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 w-full px-6 py-3 ${
-                    service.popular 
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:shadow-lg hover:shadow-cyan-500/50' 
-                      : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
-                  }`}
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:shadow-lg hover:shadow-cyan-500/50"
                 >
-                  Learn More
+                  Contact Us for Details
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </a>
 
                 {/* Decorative Gradient */}
                 <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-cyan-500/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
-            </Link>
+            </div>
           ))}
         </motion.div>
       </div>

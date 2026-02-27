@@ -169,61 +169,54 @@ export default function CustomWebsitePage() {
 
   const pricingPlans = [
     {
-      name: 'Basic Website',
-      price: 999,
+      name: 'Static Website',
+      price: 10000,
       priceAnnual: null,
       savings: null,
-      description: 'Perfect for small businesses',
+      description: 'Ideal for small businesses, professionals & startups',
       features: [
-        'Up to 5 pages',
-        'Responsive design',
+        '4–6 pages (Home, About, Services, Contact)',
+        'Mobile responsive design',
         'Basic SEO setup',
-        'Contact form',
-        'Social media links',
-        '1-month support',
-        'SSL certificate',
-        'Basic analytics'
+        'WhatsApp / inquiry form',
+        'Fast loading speed',
+        'Lifetime support'
       ],
       cta: 'Get Started',
       popular: false
     },
     {
-      name: 'Business Website',
-      price: 1999,
+      name: 'Dynamic Website',
+      price: 35000,
       priceAnnual: null,
       savings: null,
-      description: 'Ideal for growing businesses',
+      description: 'For businesses needing admin control & dynamic content',
       features: [
-        'Up to 10 pages',
-        'Custom design',
-        'Advanced SEO',
-        'Blog section',
-        'Email integration',
-        '3-month support',
-        'Content updates',
-        'Analytics dashboard'
+        'Admin panel included',
+        'Database integration',
+        'Dynamic content management',
+        'Custom forms & workflows',
+        'Mobile responsive & SEO ready',
+        'Lifetime support'
       ],
       cta: 'Get Started',
       popular: true
     },
     {
-      name: 'Premium Website',
-      price: 3999,
+      name: 'Restaurant / Specialty',
+      price: 30000,
       priceAnnual: null,
       savings: null,
-      description: 'Complete website solution',
+      description: 'Perfect for restaurants, cafes & specialty businesses',
       features: [
-        'Unlimited pages',
-        'Premium design',
-        'Full SEO optimization',
-        'Blog & portfolio',
-        'Advanced integrations',
-        '6-month support',
-        'Priority updates',
-        'Dedicated manager',
-        'Training sessions'
+        'Menu section & gallery',
+        'WhatsApp integration',
+        'Inquiry / reservation form',
+        'Google Maps integration',
+        'Mobile responsive & SEO optimized',
+        'Lifetime support'
       ],
-      cta: 'Contact Sales',
+      cta: 'Get Quote',
       popular: false
     }
   ];

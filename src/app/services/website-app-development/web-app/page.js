@@ -169,60 +169,39 @@ export default function WebAppPage() {
 
   const pricingPlans = [
     {
-      name: 'Basic Web App',
-      price: 3999,
+      name: 'Dynamic Web App',
+      price: 35000,
       priceAnnual: null,
       savings: null,
-      description: 'Simple web applications',
+      description: 'Database-driven web app with admin panel & custom logic',
       features: [
-        'Up to 20 pages/screens',
-        'User authentication',
+        'Admin panel included',
         'Database integration',
-        'Admin panel',
-        'Basic reporting',
-        'Cloud hosting setup',
-        '3-month support'
+        'User authentication',
+        'Custom forms & workflows',
+        'Mobile responsive',
+        'Lifetime support'
       ],
       cta: 'Get Started',
       popular: false
     },
     {
-      name: 'Business App',
-      price: 7999,
+      name: 'Business Web App',
+      price: 60000,
       priceAnnual: null,
       savings: null,
-      description: 'Feature-rich business app',
+      description: 'Full-featured web app with booking, dashboard or custom modules',
       features: [
-        'Unlimited pages',
-        'Advanced features',
-        'Real-time updates',
-        'API development',
-        'Custom workflows',
+        'Advanced custom modules',
+        'Role-based access control',
+        'Real-time data & notifications',
+        'API integrations',
         'Analytics dashboard',
-        'Role-based access',
-        '6-month support'
+        'Admin panel',
+        'Lifetime support'
       ],
-      cta: 'Get Started',
+      cta: 'Get Quote',
       popular: true
-    },
-    {
-      name: 'Enterprise Solution',
-      price: 14999,
-      priceAnnual: null,
-      savings: null,
-      description: 'Complex enterprise system',
-      features: [
-        'Custom architecture',
-        'Microservices',
-        'Advanced security',
-        'Third-party integrations',
-        'Dedicated team',
-        'Auto-scaling setup',
-        'Priority support',
-        '12-month support'
-      ],
-      cta: 'Contact Sales',
-      popular: false
     }
   ];
 

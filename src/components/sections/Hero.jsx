@@ -46,14 +46,23 @@ export default function Hero() {
           animate="visible"
           className="text-center max-w-5xl mx-auto"
         >
+          {/* Badge */}
+          <motion.div
+            variants={staggerItem}
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 bg-cyan-500/10 border border-cyan-500/30 rounded-full"
+          >
+            <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+            <span className="text-cyan-400 text-xs sm:text-sm font-semibold tracking-wide">Premium Digital Transformation & Performance Marketing</span>
+          </motion.div>
+
           {/* Main Headline */}
           <motion.h1
             variants={staggerItem}
             className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-3 md:mb-6 px-1"
           >
-            <span className="text-white">Software Development Company for</span>
+            <span className="text-white">Build Your Complete</span>
             <br />
-            <span className="gradient-text">Scalable & Innovative Solutions</span>
+            <span className="gradient-text">Digital Ecosystem</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -62,25 +71,27 @@ export default function Hero() {
             className="text-sm sm:text-lg md:text-xl text-gray-light mb-5 md:mb-8 leading-relaxed px-2"
             style={{ textAlign: 'center', width: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: '0.5rem', maxWidth: '95%' }}
           >
-            From Vision To Execution, Accelerated With SDEV Solutions
+            Websites · Mobile Apps · ROI-Driven Digital Marketing — Designed to Generate Growth, Visibility & Long-Term Success
           </motion.p>
 
-          {/* CTA Button */}
-          <motion.div variants={staggerItem}>
-            <motion.button
+          {/* CTA Buttons */}
+          <motion.div variants={staggerItem} className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
+            <motion.a
+              href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#0EA5E9] text-white font-semibold text-sm md:text-base hover:bg-[#0284C7] transition-colors duration-200 shadow-lg shadow-[#0EA5E9]/20"
-              style={{ 
-                paddingLeft: '1.25rem', 
-                paddingRight: '1.25rem', 
-                paddingTop: '0.5rem', 
-                paddingBottom: '0.5rem',
-                borderRadius: '0.375rem'
-              }}
+              className="px-6 md:px-8 py-3 md:py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm md:text-base rounded-lg shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/50 transition-all duration-300"
             >
-              Start Project
-            </motion.button>
+              Start Your Project
+            </motion.a>
+            <motion.a
+              href="/services"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 md:px-8 py-3 md:py-3.5 bg-white/5 border border-white/20 text-white font-semibold text-sm md:text-base rounded-lg hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-300"
+            >
+              Explore Services
+            </motion.a>
           </motion.div>
 
           {/* Stats Section */}
@@ -89,10 +100,10 @@ export default function Hero() {
             className="mt-8 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 max-w-4xl mx-auto px-2"
           >
             {[
-              { number: '11+', label: 'Years' },
-              { number: '250+', label: 'Experts' },
-              { number: '4+', label: 'Global Offices' },
-              { number: '500+', label: 'Projects Delivered' },
+              { number: '4+', label: 'Android Apps on Play Store' },
+              { number: '8+', label: 'Business Websites' },
+              { number: '3+', label: 'E-Commerce Stores' },
+              { number: '₹16K', label: 'Marketing / Month' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -113,21 +124,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
-        >
-          <motion.div className="w-1.5 h-3 bg-white/50 rounded-full" />
-        </motion.div>
-      </motion.div>
+
     </section>
   );
 }

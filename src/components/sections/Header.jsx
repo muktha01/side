@@ -38,6 +38,7 @@ export default function Header() {
 
   const serviceCategories = [
     { name: 'Website & App Development', href: '/services/website-app-development' },
+    { name: 'Mobile App Development', href: '/services/mobile-app' },
     { name: 'Digital Marketing', href: '/services/digital-marketing' },
     { name: 'AI Tools', href: '/services/ai-tools' },
     { name: 'Recruitment & Staffing Solutions', href: '/services/recruitment-staffing' },

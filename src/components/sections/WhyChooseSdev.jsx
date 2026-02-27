@@ -2,56 +2,56 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Clock, Shield, Users, Zap, Trophy, HeartHandshake, 
-  Target, Lightbulb, HeadphonesIcon 
+  BadgeCheck, Smartphone, Globe, TrendingUp, HeartHandshake, 
+  IndianRupee, LifeBuoy, Eye, Users
 } from 'lucide-react';
 
 export default function WhyChooseSdev() {
   const reasons = [
     {
-      icon: Clock,
-      title: '5+ Years Experience',
-      description: 'Proven track record since 2020 with 200+ successful projects delivered across diverse industries'
+      icon: BadgeCheck,
+      title: 'Proven Portfolio',
+      description: '4+ live Android apps on Play Store, 8+ business websites and 3+ e-commerce stores — portfolio valued ₹15L–₹25L'
     },
     {
-      icon: Users,
-      title: 'Expert Team',
-      description: '25+ skilled professionals specializing in development, design, marketing, and AI technologies'
+      icon: Smartphone,
+      title: '4+ Android Apps Live',
+      description: 'Healthcare, education, service booking and digital record management apps — all deployed and active on Play Store'
     },
     {
-      icon: Zap,
-      title: 'Rapid Delivery',
-      description: 'Agile methodology ensures quick turnaround times without compromising on quality'
+      icon: Globe,
+      title: 'Full Digital Ecosystem',
+      description: 'Website + E-Commerce + Mobile App + Performance Marketing — all under one roof for complete digital growth'
     },
     {
-      icon: Shield,
-      title: 'Secure & Reliable',
-      description: 'Enterprise-grade security protocols and robust infrastructure for all our solutions'
+      icon: IndianRupee,
+      title: 'Affordable Pricing',
+      description: 'Premium quality solutions at pricing well below market standards — without compromising on design or functionality'
     },
     {
-      icon: Trophy,
-      title: 'Award-Winning Quality',
-      description: 'Recognized for excellence in digital innovation and customer satisfaction'
+      icon: TrendingUp,
+      title: 'Performance Marketing',
+      description: '16 posters + 4 videos + 2 campaigns + lead generation + ads setup & optimisation — ₹16,000/month. Ad budget separate'
     },
     {
-      icon: Target,
-      title: 'Result-Driven Approach',
-      description: 'Focus on measurable outcomes and ROI for every project we undertake'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovative Solutions',
-      description: 'Cutting-edge technologies including AI, cloud, and automation for competitive advantage'
+      icon: Eye,
+      title: 'Transparent Communication',
+      description: 'Clear updates, honest timelines, and no hidden surprises — you always know exactly where your project stands'
     },
     {
       icon: HeartHandshake,
-      title: 'Client-Centric',
-      description: 'Your success is our priority with personalized solutions tailored to your needs'
+      title: 'Long-Term Partnership',
+      description: 'We don\'t just deliver projects. We build lasting relationships focused on your sustained growth and success'
     },
     {
-      icon: HeadphonesIcon,
-      title: '24/7 Support',
-      description: 'Round-the-clock technical support and maintenance to keep your business running'
+      icon: LifeBuoy,
+      title: 'Lifetime Technical Support',
+      description: 'Every client gets lifetime technical support — we remain your partner long after the project goes live'
+    },
+    {
+      icon: Users,
+      title: 'Special Value Bundles',
+      description: 'App clients get a FREE website + 1 month marketing + 3 months server maintenance. Website clients get free marketing too'
     }
   ];
 
@@ -76,14 +76,14 @@ export default function WhyChooseSdev() {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 px-4">
-            Why Businesses Trust{' '}
+            Why Clients Trust{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Sdev
+              Sdev In Tech
             </span>
           </h2>
 
           <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
-            We combine expertise, innovation, and dedication to deliver exceptional results
+            Proven portfolio. Affordable pricing. Transparent communication. Long-term partnerships.
           </p>
         </motion.div>
 
@@ -117,10 +117,10 @@ export default function WhyChooseSdev() {
         >
           <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl md:rounded-2xl p-6 md:p-8 border border-cyan-500/30">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
-              Join 150+ Satisfied Clients Worldwide
+              🎁 Special Offer — App + Website + Marketing Bundle
             </h3>
             <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6 px-4">
-              Experience the Sdev difference and transform your digital presence today
+              Get a FREE Business Website, 1 Month Digital Marketing & 3 Months Server Maintenance with every App project. We build your full digital ecosystem.
             </p>
             <motion.a
               href="/contact"
@@ -128,7 +128,7 @@ export default function WhyChooseSdev() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold text-sm md:text-base shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300"
             >
-              Start Your Project
+              Claim Your Bundle
             </motion.a>
           </div>
         </motion.div>

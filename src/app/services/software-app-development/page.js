@@ -10,9 +10,9 @@ export default function SoftwareAppDevelopmentPage() {
   };
 
   const stats = [
-    { value: '100+', label: 'Software Solutions Delivered' },
-    { value: '98%', label: 'Client Satisfaction Rate' },
-    { value: '60%', label: 'Average Performance Improvement' }
+    { value: '4+', label: 'Live Android Apps' },
+    { value: '8+', label: 'Business Websites Delivered' },
+    { value: '₹50K', label: 'App Development Starts From' }
   ];
 
   const services = [
@@ -26,31 +26,31 @@ export default function SoftwareAppDevelopmentPage() {
         'Custom business applications'
       ],
       image: 'https://placehold.co/500x400/0f172a/06b6d4?text=Custom+Software',
-      pricing: 'Starting from ₹25,00,000'
+      pricing: 'Starting from ₹10,000'
     },
     {
-      title: 'Application Development',
-      description: 'End-to-end application development services for web, mobile, and desktop platforms.',
+      title: 'Mobile App Development',
+      description: 'Android & cross-platform mobile apps built with Flutter — deployed to Google Play Store.',
       features: [
-        'Cross-platform applications',
-        'Progressive web applications',
-        'Desktop application development',
-        'API development and integration'
+        'Android & cross-platform (Flutter)',
+        'Custom UI/UX design',
+        'Backend & database integration',
+        'Google Play Store deployment'
       ],
-      image: 'https://placehold.co/500x400/0f172a/3b82f6?text=Application+Dev',
-      pricing: 'Starting from ₹18,00,000'
+      image: 'https://placehold.co/500x400/0f172a/3b82f6?text=Mobile+App',
+      pricing: 'Starting from ₹50,000'
     },
     {
-      title: 'Software Maintenance & Support',
-      description: 'Comprehensive maintenance and support services to keep your software running smoothly.',
+      title: 'E-Commerce Store Development',
+      description: 'Complete online store with product catalog, cart, checkout, and admin panel.',
       features: [
-        '24/7 technical support',
-        'Regular updates and patches',
-        'Performance monitoring',
-        'Bug fixes and enhancements'
+        'Product catalog & categories',
+        'Cart, checkout & payment gateway',
+        'Order management system',
+        'Admin panel included'
       ],
-      image: 'https://placehold.co/500x400/0f172a/8b5cf6?text=Maintenance',
-      pricing: 'Starting from ₹8,00,000/year'
+      image: 'https://placehold.co/500x400/0f172a/8b5cf6?text=E-Commerce',
+      pricing: 'Starting from ₹75,000'
     }
   ];
 
@@ -73,7 +73,7 @@ export default function SoftwareAppDevelopmentPage() {
     },
     {
       question: 'How much does custom software development cost?',
-      answer: 'Costs vary based on complexity, features, and timeline. Basic applications start from ₹15-20 lakhs, while enterprise solutions can range from ₹40 lakhs to several crores. We provide detailed quotes after understanding your requirements.'
+      answer: 'Websites start from ₹10,000 and mobile apps start from ₹50,000. E-commerce stores start from ₹75,000. Final cost depends on features and complexity. We provide transparent quotes with no hidden charges — contact us for a free estimate.'
     }
   ];
 
